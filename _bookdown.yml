@@ -6,4 +6,5 @@ language:
 output_dir: "docs"
 rmd_files: ["index.Rmd",
             "02-prerequisites.Rmd",
-            "07-references.Rmd"]
+            "03-protocol.Rmd",
+            "07-references.Rmd",]

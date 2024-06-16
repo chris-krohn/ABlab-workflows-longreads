@@ -1,3 +1,4 @@
+tab:table
 about
 prerequisites
 prerequisites-1
@@ -5,4 +6,12 @@ dna-extraction-kit
 consumables
 protocols
 equipment
-computational-resources
+computational-resources-and-database
+protocol
+dna-extraction
+checklist
+process
+dna-library-preparation-and-pcr
+dna-library-preparation-including-pcr-multiplexing-and-pooling-of-samples.
+checklist-1
+pcr

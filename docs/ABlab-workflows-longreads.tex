@@ -132,7 +132,7 @@ This work is licensed under a Creative Commons Attribution 4.0 International Lic
 \begin{itemize}
 \tightlist
 \item
-  Experience with basic molecular lab technique and DNA quality control (use of laminar flow hood, pipetting micro volumes, handling and preserving small volume reagents, gel electrophoresis)
+  Experience with basic molecular lab technique and DNA quality control (use of laminar flow hood, pipetting micro volumes, handling and preserving small volume reagents, sterilisation of consumables, doing gel electrophoresis)
 \item
   Experience with loading Nanopore flowcells (for example by doing a test run with Lambda DNA using the \href{https://store.nanoporetech.com/control-expansion.html}{Control Expansion Kit})\\
 \item
@@ -156,7 +156,7 @@ We commonly extract DNA from soils or from wastewater sludges using the DNeasy P
 \item
   Native Barcoding Kit (Oxford Nanopore, SQK-NBD114.96)\\
 \item
-  R10.4.1 flowcell (Oxford Nanopore, FLO-MIN114)\\
+  R10.4.1 flowcell (Oxford Nanopore, FLO-MIN114)
 \item
   NEBNext Quick Ligation Module (E6056, New England Biolab)
 \item
@@ -198,9 +198,11 @@ We commonly extract DNA from soils or from wastewater sludges using the DNeasy P
 \begin{itemize}
 \tightlist
 \item
-  A protocol for PCR amplification and clean-up (included in this Gitbook)
+  A protocol for PCR amplification and clean-up (included in this Gitbook).
 \item
-  `Ligation sequencing amplicons - Native Barcoding Kit 96 V14' available on nanoporetech.com - Checklist and full protocol
+  `Ligation sequencing amplicons - Native Barcoding Kit 96 V14' available on nanoporetech.com - Checklist and full protocol.
+\item
+  Prepare spreadsheets to normalise DNA into 96-well plates to avoid pipetting errors.
 \end{itemize}
 
 \section{Equipment}\label{equipment}
@@ -210,24 +212,192 @@ We commonly extract DNA from soils or from wastewater sludges using the DNeasy P
 \item
   Nanopore sequencer. This protocol is based on the MinION Mk1C but is not limited to this model.
 \item
-  Nanodrop spectrophotometer to check DNA quality
+  Nanodrop spectrophotometer to check DNA quality.
 \item
-  Qubit fluorometer (Thermo Fisher)
+  Qubit fluorometer (Thermo Fisher).
 \item
-  PCR thermal cycler
+  PCR thermal cycler.
 \item
-  Gel electrophoresis equipment
+  Gel electrophoresis equipment.
+\item
+  Vortex. We use the Vortex-Genie 2, including the 24 x 2 ml tube adapter for bead beating.
 \end{itemize}
 
-\section{Computational resources}\label{computational-resources}
+\section{Computational resources and database}\label{computational-resources-and-database}
 
 \begin{itemize}
 \tightlist
 \item
   An instance or computer with ≥ 2 TB storage, ≥ 64 GB RAM and ≥ 32 CPUs
 \item
-  16S-ITS-23S Database
+  16S-ITS-23S Database. To be confirmed.
 \end{itemize}
+
+\chapter{Protocol}\label{protocol}
+
+\section{DNA extraction}\label{dna-extraction}
+
+\subsection{Checklist}\label{checklist}
+
+\begin{itemize}
+\tightlist
+\item
+  Extraction kit - \href{https://www.qiagen.com/au/resources/resourcedetail?id=9bb59b74-e493-4aeb-b6c1-f660852e8d97&lang=en}{DNeasy Powersoil Pro, Qiagen, Hilden, Germany}
+\item
+  Alternatively the high throughput version of the kit used with the QIAcube \href{https://rmiteduau-my.sharepoint.com/personal/christian_krohn_rmit_edu_au/Documents/Experiments/2025_ETPSequencingProject/_\%09https:/www.qiagen.com/au/products/discovery-and-translational-research/dna-rna-purification/dna-purification/microbial-dna/dneasy-96-powersoil-pro-qiacube-ht-kit}{DNeasy 96 PowerSoil Pro QIAcube HT Kit}
+\item
+  Vortex with 24 x 1.5 mL tube adapter (e.g.~Vortex Genie 2 + adapter). Alternatively, a PowerLyzer Homogenizer.
+\item
+  NanoDrop spectrophotometer to assess DNA quality.
+\item
+  Qubit fluorometer for accurately measure DNA concentrations.
+\end{itemize}
+
+\subsection{Process}\label{process}
+
+\begin{itemize}
+\tightlist
+\item
+  Follow the extraction kit's protocol with 15 mins bead beating with Genie vortex and 24-tube adapter. Reduce this to 10 mins if less than 24 samples are extracted or if shearing of DNA should be minimised.
+\item
+  Measure DNA quality using DNA extract (1 µL) using a Nanodrop spectrophotometer
+\item
+  Measure DNA concentration using a Qubit fluorometer.
+\item
+  Into a 96-well plate, normalise extracted DNA to required PCR concentrations. For example, if 10 ng template is required for PCR, normalise DNA to 5 ng/µL and use 2 µL.\\
+\item
+  Store DNA at 4˚C until library preparation - no more than 1 week.
+\item
+  Store DNA at -20˚C if sequencing is more than 1 week away.
+\end{itemize}
+
+\section{DNA library preparation and PCR}\label{dna-library-preparation-and-pcr}
+
+\subsection{DNA Library preparation including PCR, multiplexing and pooling of samples.}\label{dna-library-preparation-including-pcr-multiplexing-and-pooling-of-samples.}
+
+\subsection{Checklist}\label{checklist-1}
+
+\begin{itemize}
+\tightlist
+\item
+  10 mM dNTPs (N0447S, New England Biolab)
+\item
+  Q5 Hot Start High-Fidelity DNA Polymerase (M0493, New England Biolab)
+\item
+  10 µM Forward Primer A519F (CAGCMGCCGCGGTAA) \citep{Martijn2019}
+\item
+  10 µM Reverse Primer U2428R (CCRAMCTGTCTCACGACG) \citep{Martijn2019}
+\item
+  JetSeq Clean Magnetic beads - or equivalent (MER-BIO-68031, Millenium Science) - to clean up PCR products\\
+\item
+  twin.tec® PCR plate 96 LoBind, semi skirted (0030129504, Eppendorf)\\
+\item
+  Nuclease-free water
+\item
+  10 mM Tris-HCl pH 8.0 with 50 mM NaCl (UltraPure™ 1M Tris-HCI, pH 8.0 \#15568025 \& NaCl (5 M), RNase-free \#AM9760G, Thermo Fisher)\\
+\item
+  HyperLadder 1kb (BIO-33025, Bioline, Millenium Science)
+\item
+  80\% ethanol, freshly prepared in nuclease-free water
+\item
+  Qubit 1X dsDNA BR Assay Kit (Q33266, Thermo Fisher)
+\end{itemize}
+
+\textbf{Notes}
+
+\begin{itemize}
+\tightlist
+\item
+  Do not vortex tubes during library preparation and use wide-bore tips to prevent DNA fragmentation. Fragmentation of amplicons may lead to incomplete reads.\\
+\item
+  The primer amplifies the whole rrn operon.
+\end{itemize}
+
+Benefits of targeting the whole rrn operon:
+
+\begin{itemize}
+\tightlist
+\item
+  Superior species-level resolution and accuracy \citep{Cusco2018, Srinivas2024}.\\
+\item
+  Covers Bacteria and Archaea.
+\end{itemize}
+
+Risks of targeting the whole rrn operon:
+
+\begin{itemize}
+\tightlist
+\item
+  Not as representative of true abundances as full-length 16S amplicons.\\
+\item
+  Species with unlinked 16S and 23S rrn DNA will be missed with this approach (for example \textless{} 9\% of rRNA genes in wastewater sludge \citep{Brewer2020}).
+\end{itemize}
+
+\subsection{PCR}\label{pcr}
+
+Time required \textasciitilde4 hrs incl.~2hrs, 40mins PCR.
+
+\begin{itemize}
+\tightlist
+\item
+  Prepare a mastermix for required number of 50 µl reactions.
+\item
+  Add 3 µl of eDNA (5ng /µl) into a 96-well plate (e.g.~Eppendorf twin.tec® PCR plate 96 LoBind, semi-skirted) using a multichannel pipette.\\
+\item
+  Add 47 µl of mastermix using a multichannel pipette and carefully pipette up and down 10 x
+\item
+  Run thermocycler.
+\item
+  Verify amplification length via 1\% agarose gel electrophoresis @ 100V for 30 min including a 1 kb ladder (Fig. 2).
+\item
+  Store at 4˚C overnight if needed.
+\end{itemize}
+
+\textbf{Important}:
+
+\begin{itemize}
+\tightlist
+\item
+  Use hot start polymerase for ease of use, with high fidelity/accuracy and one that is suitable for long amplicons. For example, Q5 High- Fidelity DNA Polymerase kit (New England Biolabs) with GC enhancer \citep{Martijn2019}.\\
+\item
+  ≤ 200 fmol is required per sample for the Native Barcoding Kit from ONP. Based on 4.25 kb (4-4.5kb), the final DNA concentration after cleaning up PCR products should be no less than 48 ng/µL (at 11.5 µl input volume) - giving 552 ng of 4.25kb amplicons.\\
+\item
+  It may require two--three PCR reactions to achieve the required DNA amount (200 fmol); e.g.~pool 2--3 x 50µl PCR products, clean combined and elude in 32.5 µl Tris.
+\end{itemize}
+
+\begin{verbatim}
+## -- Attaching core tidyverse packages ------------------------ tidyverse 2.0.0 --
+## v dplyr     1.1.4     v readr     2.1.5
+## v forcats   1.0.0     v stringr   1.5.1
+## v ggplot2   3.5.1     v tibble    3.2.1
+## v lubridate 1.9.3     v tidyr     1.3.1
+## v purrr     1.0.2     
+## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
+## i Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+\end{verbatim}
+
+\begin{table}
+
+\caption{\label{tab:table}List of components for each reaction (each tube) for PCR. See https://www.neb.com/en-au/protocols/2012/08/30/pcr-using-q5-hot-start-high-fidelity-dna-polymerase-m0493 for details.  }
+\centering
+\begin{tabular}[t]{lll}
+\toprule
+Component & 50 µl reaction & Final concentration\\
+\midrule
+5X Q5 Reaction Buffer - M0493S NEB & 10 µL & 1X\\
+10 mM dNTPs N0447S & 1 µL & 200 µM\\
+10 µM Forward Primer & 2.5 µL & 0.5 µM\\
+10 µM Reverse Primer & 2.5 µl & 0.5 µM\\
+Template DNA - 15 ng & 3 µL (5 ng/µL) & < 1,000 ng\\
+\addlinespace
+Q5 Hot StartÊHigh-Fidelity DNA Polymerase -M0493S NEB & 1.0 µL & 0.04 U/µL\\
+5X Q5 High GC Enhancer M0493S NEB & 10 µL & (1X)\\
+Nuclease-Free Water & to 50 µL & \\
+\bottomrule
+\end{tabular}
+\end{table}
 
   \bibliography{book.bib,packages.bib}
 

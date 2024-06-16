@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="index.html"/>
-<link rel="next" href="references.html"/>
+<link rel="next" href="protocol.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -107,7 +107,21 @@ div.csl-indent {
 <li class="chapter" data-level="2.3" data-path="prerequisites.html"><a href="prerequisites.html#consumables"><i class="fa fa-check"></i><b>2.3</b> Consumables</a></li>
 <li class="chapter" data-level="2.4" data-path="prerequisites.html"><a href="prerequisites.html#protocols"><i class="fa fa-check"></i><b>2.4</b> Protocols</a></li>
 <li class="chapter" data-level="2.5" data-path="prerequisites.html"><a href="prerequisites.html#equipment"><i class="fa fa-check"></i><b>2.5</b> Equipment</a></li>
-<li class="chapter" data-level="2.6" data-path="prerequisites.html"><a href="prerequisites.html#computational-resources"><i class="fa fa-check"></i><b>2.6</b> Computational resources</a></li>
+<li class="chapter" data-level="2.6" data-path="prerequisites.html"><a href="prerequisites.html#computational-resources-and-database"><i class="fa fa-check"></i><b>2.6</b> Computational resources and database</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="protocol.html"><a href="protocol.html"><i class="fa fa-check"></i><b>3</b> Protocol</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="protocol.html"><a href="protocol.html#dna-extraction"><i class="fa fa-check"></i><b>3.1</b> DNA extraction</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="protocol.html"><a href="protocol.html#checklist"><i class="fa fa-check"></i><b>3.1.1</b> Checklist</a></li>
+<li class="chapter" data-level="3.1.2" data-path="protocol.html"><a href="protocol.html#process"><i class="fa fa-check"></i><b>3.1.2</b> Process</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="protocol.html"><a href="protocol.html#dna-library-preparation-and-pcr"><i class="fa fa-check"></i><b>3.2</b> DNA library preparation and PCR</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="protocol.html"><a href="protocol.html#dna-library-preparation-including-pcr-multiplexing-and-pooling-of-samples."><i class="fa fa-check"></i><b>3.2.1</b> DNA Library preparation including PCR, multiplexing and pooling of samples.</a></li>
+<li class="chapter" data-level="3.2.2" data-path="protocol.html"><a href="protocol.html#checklist-1"><i class="fa fa-check"></i><b>3.2.2</b> Checklist</a></li>
+<li class="chapter" data-level="3.2.3" data-path="protocol.html"><a href="protocol.html#pcr"><i class="fa fa-check"></i><b>3.2.3</b> PCR</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -135,7 +149,7 @@ div.csl-indent {
 <div id="prerequisites-1" class="section level2 hasAnchor" number="2.1">
 <h2><span class="header-section-number">2.1</span> Prerequisites<a href="prerequisites.html#prerequisites-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
-<li>Experience with basic molecular lab technique and DNA quality control (use of laminar flow hood, pipetting micro volumes, handling and preserving small volume reagents, gel electrophoresis)</li>
+<li>Experience with basic molecular lab technique and DNA quality control (use of laminar flow hood, pipetting micro volumes, handling and preserving small volume reagents, sterilisation of consumables, doing gel electrophoresis)</li>
 <li>Experience with loading Nanopore flowcells (for example by doing a test run with Lambda DNA using the <a href="https://store.nanoporetech.com/control-expansion.html">Control Expansion Kit</a>)<br />
 </li>
 <li>Confident with R, R Studio and package environment managers such as Conda and Docker. Knowledge in shell scripting and Linux syntax.</li>
@@ -154,8 +168,7 @@ div.csl-indent {
 <ul>
 <li>Native Barcoding Kit (Oxford Nanopore, SQK-NBD114.96)<br />
 </li>
-<li>R10.4.1 flowcell (Oxford Nanopore, FLO-MIN114)<br />
-</li>
+<li>R10.4.1 flowcell (Oxford Nanopore, FLO-MIN114)</li>
 <li>NEBNext Quick Ligation Module (E6056, New England Biolab)</li>
 <li>NEBNext Ultra II End repair/dA-tailing Module (E7546S, New England Biolab)</li>
 <li>Blunt/TA Ligase Master Mix (M0367, New England Biolab)</li>
@@ -178,25 +191,27 @@ div.csl-indent {
 <div id="protocols" class="section level2 hasAnchor" number="2.4">
 <h2><span class="header-section-number">2.4</span> Protocols<a href="prerequisites.html#protocols" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
-<li>A protocol for PCR amplification and clean-up (included in this Gitbook)</li>
-<li>‘Ligation sequencing amplicons - Native Barcoding Kit 96 V14’ available on nanoporetech.com - Checklist and full protocol</li>
+<li>A protocol for PCR amplification and clean-up (included in this Gitbook).</li>
+<li>‘Ligation sequencing amplicons - Native Barcoding Kit 96 V14’ available on nanoporetech.com - Checklist and full protocol.</li>
+<li>Prepare spreadsheets to normalise DNA into 96-well plates to avoid pipetting errors.</li>
 </ul>
 </div>
 <div id="equipment" class="section level2 hasAnchor" number="2.5">
 <h2><span class="header-section-number">2.5</span> Equipment<a href="prerequisites.html#equipment" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>Nanopore sequencer. This protocol is based on the MinION Mk1C but is not limited to this model.</li>
-<li>Nanodrop spectrophotometer to check DNA quality</li>
-<li>Qubit fluorometer (Thermo Fisher)</li>
-<li>PCR thermal cycler</li>
-<li>Gel electrophoresis equipment</li>
+<li>Nanodrop spectrophotometer to check DNA quality.</li>
+<li>Qubit fluorometer (Thermo Fisher).</li>
+<li>PCR thermal cycler.</li>
+<li>Gel electrophoresis equipment.</li>
+<li>Vortex. We use the Vortex-Genie 2, including the 24 x 2 ml tube adapter for bead beating.</li>
 </ul>
 </div>
-<div id="computational-resources" class="section level2 hasAnchor" number="2.6">
-<h2><span class="header-section-number">2.6</span> Computational resources<a href="prerequisites.html#computational-resources" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="computational-resources-and-database" class="section level2 hasAnchor" number="2.6">
+<h2><span class="header-section-number">2.6</span> Computational resources and database<a href="prerequisites.html#computational-resources-and-database" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>An instance or computer with ≥ 2 TB storage, ≥ 64 GB RAM and ≥ 32 CPUs</li>
-<li>16S-ITS-23S Database</li>
+<li>16S-ITS-23S Database. To be confirmed.</li>
 </ul>
 
 </div>
@@ -219,7 +234,7 @@ Martijn, Joran, Anders E. Lind, Max E. Schön, Ian Spiertz, Lina Juzokaite, Igna
         </div>
       </div>
 <a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="protocol.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

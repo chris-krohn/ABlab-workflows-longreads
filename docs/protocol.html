@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Protocol | A protocol for sequencing and analysing 16S-ITS-23S amplicons using Oxford Nanopore’s Native Barcoding kit to profile prokaryotes on species-level in a mixed community [Under development]</title>
+  <meta name="description" content="A protocol for novel speciec-level detection of thousands of bacteria and archaea." />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Protocol | A protocol for sequencing and analysing 16S-ITS-23S amplicons using Oxford Nanopore’s Native Barcoding kit to profile prokaryotes on species-level in a mixed community [Under development]" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="A protocol for novel speciec-level detection of thousands of bacteria and archaea." />
+  <meta name="github-repo" content="ABlab-workflows-longreads" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Protocol | A protocol for sequencing and analysing 16S-ITS-23S amplicons using Oxford Nanopore’s Native Barcoding kit to profile prokaryotes on species-level in a mixed community [Under development]" />
+  
+  <meta name="twitter:description" content="A protocol for novel speciec-level detection of thousands of bacteria and archaea." />
+  
+
+<meta name="author" content="Christian Krohn, PhD, RMIT University" />
+
+
+<meta name="date" content="2024-06-17" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="prerequisites.html"/>
+<link rel="next" href="references.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About this GitBook</a></li>
+<li class="chapter" data-level="2" data-path="prerequisites.html"><a href="prerequisites.html"><i class="fa fa-check"></i><b>2</b> Prerequisites and consumables</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="prerequisites.html"><a href="prerequisites.html#prerequisites-1"><i class="fa fa-check"></i><b>2.1</b> Prerequisites</a></li>
+<li class="chapter" data-level="2.2" data-path="prerequisites.html"><a href="prerequisites.html#dna-extraction-kit"><i class="fa fa-check"></i><b>2.2</b> DNA extraction kit</a></li>
+<li class="chapter" data-level="2.3" data-path="prerequisites.html"><a href="prerequisites.html#consumables"><i class="fa fa-check"></i><b>2.3</b> Consumables</a></li>
+<li class="chapter" data-level="2.4" data-path="prerequisites.html"><a href="prerequisites.html#protocols"><i class="fa fa-check"></i><b>2.4</b> Protocols</a></li>
+<li class="chapter" data-level="2.5" data-path="prerequisites.html"><a href="prerequisites.html#equipment"><i class="fa fa-check"></i><b>2.5</b> Equipment</a></li>
+<li class="chapter" data-level="2.6" data-path="prerequisites.html"><a href="prerequisites.html#computational-resources-and-database"><i class="fa fa-check"></i><b>2.6</b> Computational resources and database</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="protocol.html"><a href="protocol.html"><i class="fa fa-check"></i><b>3</b> Protocol</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="protocol.html"><a href="protocol.html#dna-extraction"><i class="fa fa-check"></i><b>3.1</b> DNA extraction</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="protocol.html"><a href="protocol.html#checklist"><i class="fa fa-check"></i><b>3.1.1</b> Checklist</a></li>
+<li class="chapter" data-level="3.1.2" data-path="protocol.html"><a href="protocol.html#process"><i class="fa fa-check"></i><b>3.1.2</b> Process</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="protocol.html"><a href="protocol.html#dna-library-preparation-and-pcr"><i class="fa fa-check"></i><b>3.2</b> DNA library preparation and PCR</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="protocol.html"><a href="protocol.html#dna-library-preparation-including-pcr-multiplexing-and-pooling-of-samples."><i class="fa fa-check"></i><b>3.2.1</b> DNA Library preparation including PCR, multiplexing and pooling of samples.</a></li>
+<li class="chapter" data-level="3.2.2" data-path="protocol.html"><a href="protocol.html#checklist-1"><i class="fa fa-check"></i><b>3.2.2</b> Checklist</a></li>
+<li class="chapter" data-level="3.2.3" data-path="protocol.html"><a href="protocol.html#pcr"><i class="fa fa-check"></i><b>3.2.3</b> PCR</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A protocol for sequencing and analysing 16S-ITS-23S amplicons using Oxford Nanopore’s Native Barcoding kit to profile prokaryotes on species-level in a mixed community [Under development]</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="protocol" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Protocol<a href="protocol.html#protocol" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="dna-extraction" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> DNA extraction<a href="protocol.html#dna-extraction" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="checklist" class="section level3 hasAnchor" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> Checklist<a href="protocol.html#checklist" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Extraction kit - <a href="https://www.qiagen.com/au/resources/resourcedetail?id=9bb59b74-e493-4aeb-b6c1-f660852e8d97&amp;lang=en">DNeasy Powersoil Pro, Qiagen, Hilden, Germany</a></li>
+<li>Alternatively the high throughput version of the kit used with the QIAcube <a href="https://rmiteduau-my.sharepoint.com/personal/christian_krohn_rmit_edu_au/Documents/Experiments/2025_ETPSequencingProject/_%09https:/www.qiagen.com/au/products/discovery-and-translational-research/dna-rna-purification/dna-purification/microbial-dna/dneasy-96-powersoil-pro-qiacube-ht-kit">DNeasy 96 PowerSoil Pro QIAcube HT Kit</a></li>
+<li>Vortex with 24 x 1.5 mL tube adapter (e.g. Vortex Genie 2 + adapter). Alternatively, a PowerLyzer Homogenizer.</li>
+<li>NanoDrop spectrophotometer to assess DNA quality.</li>
+<li>Qubit fluorometer for accurately measure DNA concentrations.</li>
+</ul>
+</div>
+<div id="process" class="section level3 hasAnchor" number="3.1.2">
+<h3><span class="header-section-number">3.1.2</span> Process<a href="protocol.html#process" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Follow the extraction kit’s protocol with 15 mins bead beating with Genie vortex and 24-tube adapter. Reduce this to 10 mins if less than 24 samples are extracted or if shearing of DNA should be minimised.</li>
+<li>Measure DNA quality using DNA extract (1 µL) using a Nanodrop spectrophotometer</li>
+<li>Measure DNA concentration using a Qubit fluorometer.</li>
+<li>Into a 96-well plate, normalise extracted DNA to required PCR concentrations. For example, if 10 ng template is required for PCR, normalise DNA to 5 ng/µL and use 2 µL.<br />
+</li>
+<li>Store DNA at 4˚C until library preparation - no more than 1 week.</li>
+<li>Store DNA at -20˚C if sequencing is more than 1 week away.</li>
+</ul>
+</div>
+</div>
+<div id="dna-library-preparation-and-pcr" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> DNA library preparation and PCR<a href="protocol.html#dna-library-preparation-and-pcr" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="dna-library-preparation-including-pcr-multiplexing-and-pooling-of-samples." class="section level3 hasAnchor" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> DNA Library preparation including PCR, multiplexing and pooling of samples.<a href="protocol.html#dna-library-preparation-including-pcr-multiplexing-and-pooling-of-samples." class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="checklist-1" class="section level3 hasAnchor" number="3.2.2">
+<h3><span class="header-section-number">3.2.2</span> Checklist<a href="protocol.html#checklist-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>10 mM dNTPs (N0447S, New England Biolab)</li>
+<li>Q5 Hot Start High-Fidelity DNA Polymerase (M0493, New England Biolab)</li>
+<li>10 µM Forward Primer A519F (CAGCMGCCGCGGTAA) <span class="citation">(<a href="#ref-Martijn2019">Martijn et al. 2019</a>)</span></li>
+<li>10 µM Reverse Primer U2428R (CCRAMCTGTCTCACGACG) <span class="citation">(<a href="#ref-Martijn2019">Martijn et al. 2019</a>)</span></li>
+<li>JetSeq Clean Magnetic beads - or equivalent (MER-BIO-68031, Millenium Science) - to clean up PCR products<br />
+</li>
+<li>twin.tec® PCR plate 96 LoBind, semi skirted (0030129504, Eppendorf)<br />
+</li>
+<li>Nuclease-free water</li>
+<li>10 mM Tris-HCl pH 8.0 with 50 mM NaCl (UltraPure™ 1M Tris-HCI, pH 8.0 #15568025 &amp; NaCl (5 M), RNase-free #AM9760G, Thermo Fisher)<br />
+</li>
+<li>HyperLadder 1kb (BIO-33025, Bioline, Millenium Science)</li>
+<li>80% ethanol, freshly prepared in nuclease-free water</li>
+<li>Qubit 1X dsDNA BR Assay Kit (Q33266, Thermo Fisher)</li>
+</ul>
+<p><strong>Notes</strong></p>
+<ul>
+<li>Do not vortex tubes during library preparation and use wide-bore tips to prevent DNA fragmentation. Fragmentation of amplicons may lead to incomplete reads.<br />
+</li>
+<li>The primer amplifies the whole rrn operon.</li>
+</ul>
+<p>Benefits of targeting the whole rrn operon:</p>
+<ul>
+<li>Superior species-level resolution and accuracy <span class="citation">(<a href="#ref-Cusco2018">Cuscó et al. 2019</a>; <a href="#ref-Srinivas2024">Srinivas et al. 2024</a>)</span>.<br />
+</li>
+<li>Covers Bacteria and Archaea.</li>
+</ul>
+<p>Risks of targeting the whole rrn operon:</p>
+<ul>
+<li>Not as representative of true abundances as full-length 16S amplicons.<br />
+</li>
+<li>Species with unlinked 16S and 23S rrn DNA will be missed with this approach (for example &lt; 9% of rRNA genes in wastewater sludge <span class="citation">(<a href="#ref-Brewer2020">Brewer et al. 2020</a>)</span>).</li>
+</ul>
+</div>
+<div id="pcr" class="section level3 hasAnchor" number="3.2.3">
+<h3><span class="header-section-number">3.2.3</span> PCR<a href="protocol.html#pcr" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Time required ~4 hrs incl. 2hrs, 40mins PCR.</p>
+<ul>
+<li>Prepare a mastermix for required number of 50 µl reactions.</li>
+<li>Add 3 µl of eDNA (5ng /µl) into a 96-well plate (e.g. Eppendorf twin.tec® PCR plate 96 LoBind, semi-skirted) using a multichannel pipette.<br />
+</li>
+<li>Add 47 µl of mastermix using a multichannel pipette and carefully pipette up and down 10 x</li>
+<li>Run thermocycler.</li>
+<li>Verify amplification length via 1% agarose gel electrophoresis @ 100V for 30 min including a 1 kb ladder (Fig. 2).</li>
+<li>Store at 4˚C overnight if needed.</li>
+</ul>
+<p><strong>Important</strong>:</p>
+<ul>
+<li>Use hot start polymerase for ease of use, with high fidelity/accuracy and one that is suitable for long amplicons. For example, Q5 High- Fidelity DNA Polymerase kit (New England Biolabs) with GC enhancer <span class="citation">(<a href="#ref-Martijn2019">Martijn et al. 2019</a>)</span>.<br />
+</li>
+<li>≤ 200 fmol is required per sample for the Native Barcoding Kit from ONP. Based on 4.25 kb (4-4.5kb), the final DNA concentration after cleaning up PCR products should be no less than 48 ng/µL (at 11.5 µl input volume) - giving 552 ng of 4.25kb amplicons.<br />
+</li>
+<li>It may require two–three PCR reactions to achieve the required DNA amount (200 fmol); e.g. pool 2–3 x 50µl PCR products, clean combined and elude in 32.5 µl Tris.</li>
+</ul>
+<pre><code>## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+## ✔ dplyr     1.1.4     ✔ readr     2.1.5
+## ✔ forcats   1.0.0     ✔ stringr   1.5.1
+## ✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+## ✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+## ✔ purrr     1.0.2     
+## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()
+## ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+<table>
+<caption><span id="tab:table">Table 3.1: </span>List of components for each reaction (each tube) for PCR. See <a href="https://www.neb.com/en-au/protocols/2012/08/30/pcr-using-q5-hot-start-high-fidelity-dna-polymerase-m0493" class="uri">https://www.neb.com/en-au/protocols/2012/08/30/pcr-using-q5-hot-start-high-fidelity-dna-polymerase-m0493</a> for details.</caption>
+<colgroup>
+<col width="60%" />
+<col width="16%" />
+<col width="22%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Component</th>
+<th align="left">50 µl reaction</th>
+<th align="left">Final concentration</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">5X Q5 Reaction Buffer - M0493S NEB</td>
+<td align="left">10 µL</td>
+<td align="left">1X</td>
+</tr>
+<tr class="even">
+<td align="left">10 mM dNTPs N0447S</td>
+<td align="left">1 µL</td>
+<td align="left">200 µM</td>
+</tr>
+<tr class="odd">
+<td align="left">10 µM Forward Primer</td>
+<td align="left">2.5 µL</td>
+<td align="left">0.5 µM</td>
+</tr>
+<tr class="even">
+<td align="left">10 µM Reverse Primer</td>
+<td align="left">2.5 µl</td>
+<td align="left">0.5 µM</td>
+</tr>
+<tr class="odd">
+<td align="left">Template DNA - 15 ng</td>
+<td align="left">3 µL (5 ng/µL)</td>
+<td align="left">&lt; 1,000 ng</td>
+</tr>
+<tr class="even">
+<td align="left">Q5 Hot StartÊHigh-Fidelity DNA Polymerase -M0493S NEB</td>
+<td align="left">1.0 µL</td>
+<td align="left">0.04 U/µL</td>
+</tr>
+<tr class="odd">
+<td align="left">5X Q5 High GC Enhancer M0493S NEB</td>
+<td align="left">10 µL</td>
+<td align="left">(1X)</td>
+</tr>
+<tr class="even">
+<td align="left">Nuclease-Free Water</td>
+<td align="left">to 50 µL</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-Brewer2020" class="csl-entry">
+Brewer, Tess E., Mads Albertsen, Arwyn Edwards, Rasmus H. Kirkegaard, Eduardo P. C. Rocha, and Noah Fierer. 2020. <span>“<span class="nocase">Unlinked rRNA genes are widespread among bacteria and archaea</span>.”</span> <em>ISME Journal</em> 14 (2): 597–608. <a href="https://doi.org/10.1038/s41396-019-0552-3">https://doi.org/10.1038/s41396-019-0552-3</a>.
+</div>
+<div id="ref-Cusco2018" class="csl-entry">
+Cuscó, Anna, Carlotta Catozzi, Joaquim Viñes, Armand Sanchez, and Olga Francino. 2019. <span>“<span class="nocase">Microbiota profiling with long amplicons using Nanopore sequencing: Full-length 16S rRNA gene and the 16S-ITS-23S of the rrn operon</span>.”</span> <em>F1000Research</em> 7. <a href="https://doi.org/10.12688/f1000research.16817.2">https://doi.org/10.12688/f1000research.16817.2</a>.
+</div>
+<div id="ref-Martijn2019" class="csl-entry">
+Martijn, Joran, Anders E. Lind, Max E. Schön, Ian Spiertz, Lina Juzokaite, Ignas Bunikis, Olga V. Pettersson, and Thijs J. G. Ettema. 2019. <span>“<span class="nocase">Confident phylogenetic identification of uncultured prokaryotes through long read amplicon sequencing of the 16S-ITS-23S rRNA operon</span>.”</span> <em>Environmental Microbiology</em> 21 (7): 2485–98. <a href="https://doi.org/10.1111/1462-2920.14636">https://doi.org/10.1111/1462-2920.14636</a>.
+</div>
+<div id="ref-Srinivas2024" class="csl-entry">
+Srinivas, Meghana, Calum J Walsh, Fiona Crispie, Orla O’Sullivan, Paul D Cotter, Douwe Sinderen, and John G Kenny. 2024. <span>“<span class="nocase">Evaluating the Efficiency of 16S-ITS-23S operon Sequencing: A Comparison of Primer Pairs, Sequencing Platforms, and Taxonomic Classifiers</span>.”</span>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="prerequisites.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/03-protocol.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["ABlab-workflows-longreads.pdf", "ABlab-workflows-longreads.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
