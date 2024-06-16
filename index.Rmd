@@ -1,5 +1,5 @@
 --- 
-title: "A Minimal Book Example"
+title: "A protocol for sequencing and analysing 16S-ITS-23S amplicons using Oxford Nanopore's Native Barcoding kit to profile prokaryotes on species-level in a mixed community [Under development]"
 author: "[Christian Krohn, PhD, RMIT University](https://www.rmit.edu.au/contact/staff-contacts/academic-staff/k/krohn---christian)"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
@@ -8,54 +8,46 @@ bibliography: [book.bib, packages.bib]
 # url: your book url like https://bookdown.org/yihui/bookdown
 # cover-image: path to the social sharing image like images/cover.jpg
 description: |
-  This is a minimal example of using the bookdown package to write a book.
-  The HTML output format for this example is bookdown::gitbook,
-  set in the _output.yml file.
+  A protocol for novel speciec-level detection of thousands of bacteria and archaea.
 link-citations: yes
 biblio-style: apalike
 github-repo: ABlab-workflows-longreads
 ---
 
-# About
+# About this GitBook {#about}
 
-This is a _sample_ book written in **Markdown**. You can use anything that Pandoc's Markdown supports; for example, a math equation $a^2 + b^2 = c^2$.
+![](./img/vectorstock_23650232.jpg){width="500"}
 
-## Usage 
+This GitBook is under development (2024). 
 
-Each **bookdown** chapter is an .Rmd file, and each .Rmd file can contain one (and only one) chapter. A chapter *must* start with a first-level heading: `# A good chapter`, and can contain one (and only one) first-level heading.
+This GitBook provides a basic step-by-step protocol for students who want to get started with sequencing multiple samples of high quality, full-length microbial amplicons with an Oxford Nanopore instrument, and then process and visualise the data using various packages in R. 
 
-Use second-level and higher headings within chapters like: `## A short section` or `### An even shorter section`.
+This protocol reflects the experiences we had in the lab and may help to get you started on your own journey of discovery. One of the biggest hurdles for students that embark on sequencing environmental DNA for the first time, is the effort required to learn new technologies, various coding languages, file types and formats, packages or platforms that are involved (think Unix, Linux, Slurm, Qiime, R, RMarkdown, python, conda, ggplot, docker, GitHub, data instances...) before they even can start looking at exploring the data for biological meaning and producing publishable output. Hence, this protocol aims at lowering your 'activation' energy by providing some guidance for each step from DNA extraction, to amplification, library preparation, sequencing, data processing and finally some basic visualisations in R.  
 
-The `index.Rmd` file is required, and is also your first book chapter. It will be the homepage when you render the book.
+This protocol uses the DNeasy Powersoil Pro Kit (Qiagen, Hilden, Germany) to extract DNA from wastewater sludge, as well as the Native Barcoding Kit (SQK-NBD114.96) with a R10.4.1 flowcell (FLO-MIN114) to sequence long (~4-4.4 kb) amplicons from environmental DNA. The primer used was developed by [@Martijn2019]. Initial costs to purchase all consumables will be ~AUD\$7,700. 
 
-## Render book
+Check out our workflows for short-read 16S sequencing at [https://chrismitbiz.github.io/ABlab-workflows](https://chrismitbiz.github.io/ABlab-workflows) if you want to get started with Miseq 16S sequencing instead.  
+  
+If you are interested in sequencing the living biomass via PMA treatment in combination with short-read 16S sequencing, check out our recent paper [Dead in the water – Role of relic DNA and primer choice for targeted sequencing surveys of anaerobic sewage sludge intended for biological monitoring](https://doi.org/10.1016/j.watres.2024.121354) [@Krohn2024] 
+   
+   
+**Get in touch**
 
-You can render the HTML version of this example book without changing anything:
+We work at the Andy Ball lab, RMIT University, Bundoora, Melbourne and are part of the Industry-led [Biosolids Training Centre](https://www.transformingbiosolids.org.au). Email me or comment on the discussion section of the [GitHub repository](https://github.com/chrismitbiz/ABlab-workflows/discussions/){target="_blank"} for this GitBook. You will need to get a GitHub account to join the discussion. Its free.  
+  
+More about me and my PhD research can be found here: <https://clean-dirt-digests.netlify.app>.\
+Follow me on [Twitter](https://twitter.com/CleanDirtChris) or [LinkedIn](https://www.linkedin.com/in/christian-krohn-54904855). 
 
-1. Find the **Build** pane in the RStudio IDE, and
+\ 
 
-1. Click on **Build Book**, then select your output format, or select "All formats" if you'd like to use multiple formats from the same book source files.
+![](./img/avatar.jpg){width="150"}
 
-Or build the book from the R console:
+Bio: \
+Dr Chris Krohn is an early career researcher whose interests could be summed up with: “Environmental sequencing, microbial ecology, chlorinated pollutants, organic matter, wastewater, anaerobic digestion, and how everything connects".
+  
+In 2021 I joined the ARC Biosolids Training Centre at RMIT (www.transformingbiosolids.org.au), where we help water utilities to improve circular resource management by getting more renewable biogas and carbon/fertiliser values out of our municipal biosolids (essentially our poo). In project 1C of the Centre I develop metagenomic (DNA-based) methods to monitor the microbiome of anaerobic digestion, an important microbial treatment process for wastewater. I believe DNA-based diagnoses of wastewater sludges will help the water/biosolids sector improve resource recoveries and risk management.  
+  
+Before that, after a career in one of the most fast-cycled and short-sighted manufacturing industries that took me from Germany to Vietnam and Hong Kong/Shenzhen, I decided to hit the switch and start thinking long-term and circular. Ten back-to-uni years later, in 2021 I finished a PhD in Soil Science at La Trobe Uni where I sequenced soil DNA and explored if and how soil biology was involved in the degradation of extremely persistent legacy pesticides that contaminate agricultural surface soils since several decades. \
+    
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img src="https://i.creativecommons.org/l/by/4.0/88x31.png" alt="Creative Commons License" style="border-width:0"/></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
 
-```{r, eval=FALSE}
-bookdown::render_book()
-```
-
-To render this example to PDF as a `bookdown::pdf_book`, you'll need to install XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <https://yihui.org/tinytex/>.
-
-## Preview book
-
-As you work, you may start a local server to live preview this HTML book. This preview will update as you edit the book when you save individual .Rmd files. You can start the server in a work session by using the RStudio add-in "Preview book", or from the R console:
-
-```{r eval=FALSE}
-bookdown::serve_book()
-```
-
-
-```{r include=FALSE}
-# automatically create a bib database for R packages
-knitr::write_bib(c(
-  .packages(), 'bookdown', 'knitr', 'rmarkdown'
-), 'packages.bib')
-```
