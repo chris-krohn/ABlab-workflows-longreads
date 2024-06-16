@@ -12,7 +12,6 @@ protocol
 dna-extraction
 checklist
 process
-dna-library-preparation-and-pcr
-dna-library-preparation-including-pcr-multiplexing-and-pooling-of-samples.
+amplification-of-16s-its-23-operon
 checklist-1
 pcr

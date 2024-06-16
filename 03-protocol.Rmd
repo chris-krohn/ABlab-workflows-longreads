@@ -19,9 +19,7 @@
 -   Store DNA at 4˚C until library preparation - no more than 1 week.
 -   Store DNA at -20˚C if sequencing is more than 1 week away.
 
-## DNA library preparation and PCR
-
-### DNA Library preparation including PCR, multiplexing and pooling of samples.
+##  Amplification of 16S-ITS-23 operon
 
 ### Checklist
 
@@ -52,7 +50,7 @@ Risks of targeting the whole rrn operon:
 -   Not as representative of true abundances as full-length 16S amplicons.\
 -   Species with unlinked 16S and 23S rrn DNA will be missed with this approach (for example \< 9% of rRNA genes in wastewater sludge [@Brewer2020]).
 
-### PCR
+### PCR 
 
 Time required \~4 hrs incl. 2hrs, 40mins PCR.
 
