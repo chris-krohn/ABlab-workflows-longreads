@@ -132,7 +132,7 @@ This work is licensed under a Creative Commons Attribution 4.0 International Lic
 \begin{itemize}
 \tightlist
 \item
-  Experience with basic molecular lab technique and DNA quality control (use of laminar flow hood, pipetting micro volumes, handling and preserving small volume reagents, sterilisation of consumables, doing gel electrophoresis)
+  Experience with basic molecular laboratory techniques and DNA quality control (use of laminar flow hood, pipetting micro volumes, handling and preserving small volume reagents, sterilisation of consumables, doing gel electrophoresis)
 \item
   Experience with loading Nanopore flowcells (for example by doing a test run with Lambda DNA using the \href{https://store.nanoporetech.com/control-expansion.html}{Control Expansion Kit})\\
 \item
@@ -149,7 +149,7 @@ We commonly extract DNA from soils or from wastewater sludges using the DNeasy P
 \caption{``Example of read size distribution of sludge DNA extracted with the DNeasy Powersoil Pro Kit in our lab''}
 \end{figure}
 
-\section{Consumables}\label{consumables}
+\section{Other consumables}\label{other-consumables}
 
 \begin{itemize}
 \tightlist
@@ -340,15 +340,15 @@ Time required \textasciitilde4 hrs incl.~2hrs, 40mins PCR.
 \begin{itemize}
 \tightlist
 \item
-  Prepare a mastermix for required number of 50 µl reactions.
+  Prepare a mastermix for required number of 50 µl reactions (Table 3.1).
 \item
   Add 3 µl of eDNA (5ng /µl) into a 96-well plate (e.g.~Eppendorf twin.tec® PCR plate 96 LoBind, semi-skirted) using a multichannel pipette.\\
 \item
   Add 47 µl of mastermix using a multichannel pipette and carefully pipette up and down 10 x
 \item
-  Run thermocycler.
+  Run thermocycler (Table 3.2).
 \item
-  Verify amplification length via 1\% agarose gel electrophoresis @ 100V for 30 min including a 1 kb ladder (Fig. 2).
+  Verify amplification length via 1\% agarose gel electrophoresis @ 100V for 30 min including a 1 kb ladder.
 \item
   Store at 4˚C overnight if needed.
 \end{itemize}
@@ -365,19 +365,6 @@ Time required \textasciitilde4 hrs incl.~2hrs, 40mins PCR.
   It may require two--three PCR reactions to achieve the required DNA amount (200 fmol); e.g.~pool 2--3 x 50µl PCR products, clean combined and elude in 32.5 µl Tris.
 \end{itemize}
 
-\begin{verbatim}
-## -- Attaching core tidyverse packages ------------------------ tidyverse 2.0.0 --
-## v dplyr     1.1.4     v readr     2.1.5
-## v forcats   1.0.0     v stringr   1.5.1
-## v ggplot2   3.5.1     v tibble    3.2.1
-## v lubridate 1.9.3     v tidyr     1.3.1
-## v purrr     1.0.2     
-## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
-## x dplyr::filter() masks stats::filter()
-## x dplyr::lag()    masks stats::lag()
-## i Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
-\end{verbatim}
-
 \begin{table}
 
 \caption{\label{tab:table}List of components for each reaction (each tube) for PCR. See https://www.neb.com/en-au/protocols/2012/08/30/pcr-using-q5-hot-start-high-fidelity-dna-polymerase-m0493 for details.  }
@@ -392,9 +379,32 @@ Component & 50 µl reaction & Final concentration\\
 10 µM Reverse Primer & 2.5 µl & 0.5 µM\\
 Template DNA - 15 ng & 3 µL (5 ng/µL) & < 1,000 ng\\
 \addlinespace
-Q5 Hot StartÊHigh-Fidelity DNA Polymerase -M0493S NEB & 1.0 µL & 0.04 U/µL\\
+Q5 Hot Start High-Fidelity DNA Polymerase -M0493S NEB & 1.0 µL & 0.04 U/µL\\
 5X Q5 High GC Enhancer M0493S NEB & 10 µL & (1X)\\
 Nuclease-Free Water & to 50 µL & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+~
+
+\begin{table}
+
+\caption{\label{tab:table2}Thermocycler conditions (Martijn et al 2019).}
+\centering
+\begin{tabular}[t]{l}
+\toprule
+Cycle conditions\\
+\midrule
+1 cycle:\\
+30 s - Initial Denaturation 98 degrees C\\
+35 cycles:\\
+10 s - 98 degrees C\\
+30 s -  64 degrees C\\
+\addlinespace
+210 s - 72 degrees C\\
+1 cycle:\\
+10 min - Final Extension  72ûC\\
 \bottomrule
 \end{tabular}
 \end{table}

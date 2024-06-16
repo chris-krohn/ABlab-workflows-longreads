@@ -56,11 +56,11 @@ Risks of targeting the whole rrn operon:
 
 Time required \~4 hrs incl. 2hrs, 40mins PCR.
 
--   Prepare a mastermix for required number of 50 µl reactions.
+-   Prepare a mastermix for required number of 50 µl reactions (Table 3.1).
 -   Add 3 µl of eDNA (5ng /µl) into a 96-well plate (e.g. Eppendorf twin.tec® PCR plate 96 LoBind, semi-skirted) using a multichannel pipette.\
 -   Add 47 µl of mastermix using a multichannel pipette and carefully pipette up and down 10 x
--   Run thermocycler.
--   Verify amplification length via 1% agarose gel electrophoresis \@ 100V for 30 min including a 1 kb ladder (Fig. 2).
+-   Run thermocycler (Table 3.2).
+-   Verify amplification length via 1% agarose gel electrophoresis \@ 100V for 30 min including a 1 kb ladder.
 -   Store at 4˚C overnight if needed.
 
 **Important**:
@@ -70,7 +70,7 @@ Time required \~4 hrs incl. 2hrs, 40mins PCR.
 -   It may require two–three PCR reactions to achieve the required DNA amount (200 fmol); e.g. pool 2–3 x 50µl PCR products, clean combined and elude in 32.5 µl Tris.
   
   
-```{r table, tidy=FALSE, echo=FALSE }
+```{r table, tidy=FALSE, echo=FALSE, message=FALSE, tidy=FALSE}
 library(tidyverse)
 pcr <- read.csv("PCR.csv",header=TRUE, stringsAsFactors=FALSE, fileEncoding="latin1")
 pcr <- pcr %>% dplyr::rename(`50 µl reaction` = "Fifty.microL.Reaction" )
@@ -80,3 +80,18 @@ knitr::kable(
  booktabs = TRUE
 )
 ```
+  
+  
+\ 
+  
+```{r table2, tidy=FALSE, echo=FALSE, message=FALSE, tidy=FALSE}
+library(tidyverse)
+pcrcond <- read.csv("PCRcond.csv",header=TRUE, stringsAsFactors=FALSE, fileEncoding="latin1")
+pcrcond <- pcrcond %>% dplyr::rename(`Cycle conditions` = "Cycle.conditions" )
+knitr::kable(
+ pcrcond, caption = 'Thermocycler conditions (Martijn et al 2019).',
+ booktabs = TRUE
+)
+```
+
+

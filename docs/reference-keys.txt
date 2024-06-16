@@ -1,9 +1,10 @@
 tab:table
+tab:table2
 about
 prerequisites
 prerequisites-1
 dna-extraction-kit
-consumables
+other-consumables
 protocols
 equipment
 computational-resources-and-database

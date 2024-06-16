@@ -1,7 +1,7 @@
 # Prerequisites and consumables {#prerequisites}
 
 ## Prerequisites  
- - Experience with basic molecular lab technique and DNA quality control (use of laminar flow hood, pipetting micro volumes, handling and preserving small volume reagents, sterilisation of consumables, doing gel electrophoresis)
+ - Experience with basic molecular laboratory techniques and DNA quality control (use of laminar flow hood, pipetting micro volumes, handling and preserving small volume reagents, sterilisation of consumables, doing gel electrophoresis)
  - Experience with loading Nanopore flowcells (for example by doing a test run with Lambda DNA using the [Control Expansion Kit](https://store.nanoporetech.com/control-expansion.html))  
  - Confident with R, R Studio and package environment managers such as Conda and Docker. Knowledge in shell scripting and Linux syntax.
 
@@ -12,7 +12,7 @@ We commonly extract DNA from soils or from wastewater sludges using the DNeasy P
   
 !["Example of read size distribution of sludge DNA extracted with the DNeasy Powersoil Pro Kit in our lab"](./img/readsize.png){width="600"}
   
-## Consumables   
+## Other consumables   
  - Native Barcoding Kit (Oxford Nanopore, SQK-NBD114.96)  
  - R10.4.1 flowcell (Oxford Nanopore, FLO-MIN114)
  - NEBNext Quick Ligation Module (E6056, New England Biolab)
