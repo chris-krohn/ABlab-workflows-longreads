@@ -1,6 +1,6 @@
 --- 
 title: "A Minimal Book Example"
-author: "John Doe"
+author: "[Christian Krohn, PhD, RMIT University](https://www.rmit.edu.au/contact/staff-contacts/academic-staff/k/krohn---christian)"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
@@ -12,7 +12,8 @@ description: |
   The HTML output format for this example is bookdown::gitbook,
   set in the _output.yml file.
 link-citations: yes
-github-repo: rstudio/bookdown-demo
+biblio-style: apalike
+github-repo: ABlab-workflows-longreads
 ---
 
 # About
