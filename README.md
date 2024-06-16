@@ -1,4 +1,4 @@
-[UNDER DEVELOPMENT 2024]
+# A protocol for sequencing and analysing 16S-ITS-23S amplicons using Oxford Nanopore’s Native Barcoding kit to profile prokaryotes on species-level in a mixed community [Under development]
 
 Welcome! 
 
