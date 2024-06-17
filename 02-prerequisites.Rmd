@@ -44,6 +44,7 @@ We commonly extract DNA from soils or from wastewater sludges using the DNeasy P
  - Nanodrop spectrophotometer to check DNA quality.
  - Qubit fluorometer (Thermo Fisher).
  - PCR thermal cycler.
+ - Magnets for 96-well plates and 1.5 ml tubes
  - Gel electrophoresis equipment.
  - Vortex. We use the Vortex-Genie 2, including the 24 x 2 ml tube adapter for bead beating.
  

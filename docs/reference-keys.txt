@@ -11,7 +11,12 @@ computational-resources-and-database
 protocol
 dna-extraction
 checklist
-process
+steps
 amplification-of-16s-its-23-operon
 checklist-1
 pcr
+pcr-product-clean-up
+checklist-2
+steps-1
+library-preparation
+outline-of-steps

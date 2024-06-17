@@ -114,12 +114,21 @@ div.csl-indent {
 <li class="chapter" data-level="3.1" data-path="protocol.html"><a href="protocol.html#dna-extraction"><i class="fa fa-check"></i><b>3.1</b> DNA extraction</a>
 <ul>
 <li class="chapter" data-level="3.1.1" data-path="protocol.html"><a href="protocol.html#checklist"><i class="fa fa-check"></i><b>3.1.1</b> Checklist</a></li>
-<li class="chapter" data-level="3.1.2" data-path="protocol.html"><a href="protocol.html#process"><i class="fa fa-check"></i><b>3.1.2</b> Process</a></li>
+<li class="chapter" data-level="3.1.2" data-path="protocol.html"><a href="protocol.html#steps"><i class="fa fa-check"></i><b>3.1.2</b> Steps</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="protocol.html"><a href="protocol.html#amplification-of-16s-its-23-operon"><i class="fa fa-check"></i><b>3.2</b> Amplification of 16S-ITS-23 operon</a>
 <ul>
 <li class="chapter" data-level="3.2.1" data-path="protocol.html"><a href="protocol.html#checklist-1"><i class="fa fa-check"></i><b>3.2.1</b> Checklist</a></li>
 <li class="chapter" data-level="3.2.2" data-path="protocol.html"><a href="protocol.html#pcr"><i class="fa fa-check"></i><b>3.2.2</b> PCR</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="protocol.html"><a href="protocol.html#pcr-product-clean-up"><i class="fa fa-check"></i><b>3.3</b> PCR product clean-up</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="protocol.html"><a href="protocol.html#checklist-2"><i class="fa fa-check"></i><b>3.3.1</b> Checklist</a></li>
+<li class="chapter" data-level="3.3.2" data-path="protocol.html"><a href="protocol.html#steps-1"><i class="fa fa-check"></i><b>3.3.2</b> Steps</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="protocol.html"><a href="protocol.html#library-preparation"><i class="fa fa-check"></i><b>3.4</b> Library preparation</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="protocol.html"><a href="protocol.html#outline-of-steps"><i class="fa fa-check"></i><b>3.4.1</b> Outline of steps</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
@@ -150,15 +159,15 @@ div.csl-indent {
 <div id="checklist" class="section level3 hasAnchor" number="3.1.1">
 <h3><span class="header-section-number">3.1.1</span> Checklist<a href="protocol.html#checklist" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
-<li>Extraction kit - <a href="https://www.qiagen.com/au/resources/resourcedetail?id=9bb59b74-e493-4aeb-b6c1-f660852e8d97&amp;lang=en">DNeasy Powersoil Pro, Qiagen, Hilden, Germany</a></li>
-<li>Alternatively the high throughput version of the kit used with the QIAcube <a href="https://rmiteduau-my.sharepoint.com/personal/christian_krohn_rmit_edu_au/Documents/Experiments/2025_ETPSequencingProject/_%09https:/www.qiagen.com/au/products/discovery-and-translational-research/dna-rna-purification/dna-purification/microbial-dna/dneasy-96-powersoil-pro-qiacube-ht-kit">DNeasy 96 PowerSoil Pro QIAcube HT Kit</a></li>
+<li>Extraction kit - <a href="https://www.qiagen.com/au/resources/resourcedetail?id=9bb59b74-e493-4aeb-b6c1-f660852e8d97&amp;lang=en">DNeasy Powersoil Pro, Qiagen, Hilden, Germany</a>. See Section <a href="prerequisites.html#prerequisites">2</a> for more details.</li>
+<li>Alternatively the high throughput version of the kit used with the QIAcube <a href="https://rmiteduau-my.sharepoint.com/personal/christian_krohn_rmit_edu_au/Documents/Experiments/2025_ETPSequencingProject/_%09https:/www.qiagen.com/au/products/discovery-and-translational-research/dna-rna-purification/dna-purification/microbial-dna/dneasy-96-powersoil-pro-qiacube-ht-kit">DNeasy 96 PowerSoil Pro QIAcube HT Kit</a>.</li>
 <li>Vortex with 24 x 1.5 mL tube adapter (e.g. Vortex Genie 2 + adapter). Alternatively, a PowerLyzer Homogenizer.</li>
 <li>NanoDrop spectrophotometer to assess DNA quality.</li>
 <li>Qubit fluorometer for accurately measure DNA concentrations.</li>
 </ul>
 </div>
-<div id="process" class="section level3 hasAnchor" number="3.1.2">
-<h3><span class="header-section-number">3.1.2</span> Process<a href="protocol.html#process" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="steps" class="section level3 hasAnchor" number="3.1.2">
+<h3><span class="header-section-number">3.1.2</span> Steps<a href="protocol.html#steps" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li>Follow the extraction kit’s protocol with 15 mins bead beating with Genie vortex and 24-tube adapter. Reduce this to 10 mins if less than 24 samples are extracted or if shearing of DNA should be minimised.</li>
 <li>Measure DNA quality using DNA extract (1 µL) using a Nanodrop spectrophotometer</li>
@@ -213,7 +222,8 @@ div.csl-indent {
 <h3><span class="header-section-number">3.2.2</span> PCR<a href="protocol.html#pcr" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Time required ~4 hrs incl. 2hrs, 40mins PCR.</p>
 <ul>
-<li>Prepare a mastermix for required number of 50 µl reactions (Table 3.1).</li>
+<li>Prepare a mastermix for required number of 50 µl reactions (Table 3.1). Note that in our experience at least two 50 µl reactions are required to produce sufficient amplicon concentrations (200 fmol) for the Native Barcoding Kit from Oxford Nanopore.<br />
+</li>
 <li>Add 3 µl of eDNA (5ng /µl) into a 96-well plate (e.g. Eppendorf twin.tec® PCR plate 96 LoBind, semi-skirted) using a multichannel pipette.<br />
 </li>
 <li>Add 47 µl of mastermix using a multichannel pipette and carefully pipette up and down 10 x</li>
@@ -229,8 +239,7 @@ div.csl-indent {
 </li>
 <li>It may require two–three PCR reactions to achieve the required DNA amount (200 fmol); e.g. pool 2–3 x 50µl PCR products, clean combined and elude in 32.5 µl Tris.</li>
 </ul>
-<p> 
- </p>
+<p>   </p>
 <table>
 <caption><span id="tab:table">Table 3.1: </span>List of components for each reaction (each tube) for PCR. See <a href="https://www.neb.com/en-au/protocols/2012/08/30/pcr-using-q5-hot-start-high-fidelity-dna-polymerase-m0493" class="uri">https://www.neb.com/en-au/protocols/2012/08/30/pcr-using-q5-hot-start-high-fidelity-dna-polymerase-m0493</a> for details.</caption>
 <colgroup>
@@ -323,6 +332,74 @@ div.csl-indent {
 </tr>
 </tbody>
 </table>
+<p><br />
+</p>
+</div>
+</div>
+<div id="pcr-product-clean-up" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> PCR product clean-up<a href="protocol.html#pcr-product-clean-up" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Clean with 0.6X JetSeq Clean Magnetic beads (or equivalent) and wash twice with 80% ethanol. This follows a similar protocol to the Illumina 16S-metagenomics library prep guide.</p>
+<p>Time required ~ 1 hr per 24 samples.</p>
+<div id="checklist-2" class="section level3 hasAnchor" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> Checklist<a href="protocol.html#checklist-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Magnet for 96-well plate</li>
+<li>80% ethanol, freshly prepared in nuclease-free water<br />
+</li>
+<li>Nuclease-free water</li>
+<li>10 mM Tris-HCl pH 8.0 with 50 mM NaCl (UltraPure™ 1M Tris-HCI, pH 8.0 #15568025 &amp; NaCl (5 M), RNase-free #AM9760G, Thermo Fisher)</li>
+<li>JetSeq Clean Magnetic beads (MER-BIO-68031, Millenium Science) or equivalent - to clean up PCR products.</li>
+</ul>
+<p><strong>Notes</strong></p>
+<p>Use wide bore tips for adding mag beads and subsequent (careful) mixing by pipetting to minimise DNA fragmentation.</p>
+</div>
+<div id="steps-1" class="section level3 hasAnchor" number="3.3.2">
+<h3><span class="header-section-number">3.3.2</span> Steps<a href="protocol.html#steps-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Pool replicate reactions into one well - e.g. 3 x 50 µl = 150 µl in one well.</li>
+<li>Using a multi channel pipette, add 0.6X beads to PCR products in the same wells (e.g. 90 µl to 150 µl pooled reactions), pipette 10 x up and down and/or a gentle vortex after sealing the plate, careful not to spill (Vortex Genie speed 2).</li>
+<li>10 min incubation at RT</li>
+<li>Place 5 mins on 96-well magnet and remove supernatant.</li>
+<li>Wash twice with 200 µl 80% OH in same 96-well plate and let alcohol evaporate for ~ 5 mins or until alcohol is completely removed.</li>
+<li>Take plate off magnet and elude pellet to a volume that provides appropriate DNA concentrations
+<ul>
+<li>e.g. add 32.5 µl of elution buffer (10 mM Tris 50mM NaCl). The pellet will be stuck higher than the buffer surface in the well.</li>
+<li>Hence, pipetting up and down 20–30 x may be necessary to carefully wash the pellet of the tube wall, using a wide bore tip.</li>
+<li>Or centrifuge plate at 200-500 rcf for 1 min.</li>
+</ul></li>
+<li>Off-magnet, incubate in final elution (incl. beads) for 15 minutes at 37°C. Every 2 minutes, agitate the sample by gently vortexing the plate for 10 seconds (after sealing plate) to encourage DNA elution.</li>
+<li>Collect 30 µl of cleaned DNA after ~ 5 mins on magnet using wide bore tips.</li>
+<li>Quantify and record amplicon concentrations using Qubit HS or BS chemistry and record values. Based on 4.25 kb amplicons (4-4.5kb), the final DNA concentration after cleaning up PCR products should be no less than 48 ng/µL to have sufficient material for downstream library preparation (200 fmol, &gt; 552 ng of 4.25kb amplicons).</li>
+<li>Verify amplification length via 1% agarose gel electrophoresis @ 100V for 30 min including a 1 kb ladder.</li>
+<li>For each sample calculate volumes required of cleaned DNA and H<sub>2</sub>0 to get 200 fmol in 11.5 µl - for library preparation with the Native Barcoding Kit from Oxford Nanopore. Use V1 = C2*V2 / C1, where V1 = x, C1 = DNA concentrations (ng/µl), C2 = 48 ng/µl, V2 = 11.5 µl). H<sub>2</sub>0 volume = 11.5 µl - V1. These volumes will be used in the next step.</li>
+</ul>
+</div>
+</div>
+<div id="library-preparation" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> Library preparation<a href="protocol.html#library-preparation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>DNA Library preparation, including multiplexing and pooling of different samples. Here the 16S-ITS-23S rRNA operon was amplified from environmental DNA during PCR.</p>
+<p><strong>Notes</strong></p>
+<ul>
+<li>Follow the protocol <strong>Native Barcoding Kit 96 V14 (SQK-NBD114.96)</strong> from Oxford Nanopore.</li>
+<li>Update the MinION packages and MinKNOW software.</li>
+<li>Prepare a sample sheet for upload to instrument (to save time when setting up the sequencing in MinKNOW)</li>
+<li>Check and record which basecaller is used in the most recent MINKNOW software update. Should be Dorado.</li>
+<li>Print out and follow the Kit’s protocol and checklist (<code>Ligation sequencing amplicons - Native Barcoding Kit 96 V14 (SQK-NBD114.96)-minion.pdf</code>).</li>
+<li>Amplicon product yields from PCR can vary widely depending on environmental source.
+<ul>
+<li>To achieve consistent (normalised) concentrations (200 fmol) across all samples, add appropriate input volume (calculated with C1<em>V1 = C2</em>V2) and fill to 11.5 µl with H20 to the first step of the Native Barcoding kit protocol (‘Ligation sequencing amplicons - Native Barcoding Kit 96 V14 (SQK-NBD114.96)-minion.pdf’.</li>
+<li>If concentration was lower than the required 200 fmol for a sample, the input volume of the end-prepped amplicons into the second step of the protocol (native barcode ligation step) may have to be increased accordingly.</li>
+</ul></li>
+</ul>
+<div id="outline-of-steps" class="section level3 hasAnchor" number="3.4.1">
+<h3><span class="header-section-number">3.4.1</span> Outline of steps<a href="protocol.html#outline-of-steps" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>End-prep DNA of 11.5 µL DNA (200 fmol).</li>
+<li>Native barcode ligation using 0.75 µL of end-prepped DNA using one of 96 barcodes from the kit incl. pooling of barcoded samples into LoBind tube (1.5 mL).</li>
+<li>Bead clean-up and elution of 35 µL of pooled library and Qubit.</li>
+<li>SAFE STOP: store at 4 ˚C overnight if needed.</li>
+<li>Adapter ligation to get a final library of 35–50 fmol at 12 µL.</li>
+</ul>
 
 </div>
 </div>
