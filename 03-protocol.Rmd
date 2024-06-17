@@ -8,11 +8,11 @@
 -   Alternatively the high throughput version of the kit used with the QIAcube [DNeasy 96 PowerSoil Pro QIAcube HT Kit](https://rmiteduau-my.sharepoint.com/personal/christian_krohn_rmit_edu_au/Documents/Experiments/2025_ETPSequencingProject/_%09https:/www.qiagen.com/au/products/discovery-and-translational-research/dna-rna-purification/dna-purification/microbial-dna/dneasy-96-powersoil-pro-qiacube-ht-kit).
 -   Vortex with 24 x 1.5 mL tube adapter (e.g. Vortex Genie 2 + adapter). Alternatively, a PowerLyzer Homogenizer.
 -   NanoDrop spectrophotometer to assess DNA quality.
--   Qubit fluorometer for accurately measure DNA concentrations.
+-   Qubit fluorometer to accurately measure DNA concentrations.
 
 ### Steps
 
--   Follow the extraction kit's protocol with 15 mins bead beating with Genie vortex and 24-tube adapter. Reduce this to 10 mins if less than 24 samples are extracted or if shearing of DNA should be minimised.
+-   Follow the extraction kit's protocol with 15 mins bead beating using a Vortex-Genie and 24-tube adapter. Reduce this to 10 mins if less than 24 samples are extracted or if shearing of DNA should be minimised.
 -   Measure DNA quality using DNA extract (1 µL) using a Nanodrop spectrophotometer
 -   Measure DNA concentration using a Qubit fluorometer.
 -   Into a 96-well plate, normalise extracted DNA to required PCR concentrations. For example, if 10 ng template is required for PCR, normalise DNA to 5 ng/µL.\
