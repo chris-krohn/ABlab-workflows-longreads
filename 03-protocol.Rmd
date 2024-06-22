@@ -192,7 +192,7 @@ Time required: \~ 6 hours from start to finished library ready for loading.
 
 **Follow the Nanopore protocol. There are four parts:**
 
-1.  End-prepping of 11.5 µL DNA (200 fmol). \
+1.  End-prepping of 11.5 µL DNA (200 fmol).\
     Pipetting into the 96-well plate may take time as there are two rounds of pipetting, one for the DNA amplicon volumes and one for H~2~0 volumes to get 200 fmol amplicon DNA in 11.5 µl, as well as the remaining reagents for end-prepping the DNA. It is not possible to use multichannel pipettes for this step.
 
 2.  Native barcode ligation using 0.75 µL of end-prepped DNA using one of 96 barcodes from the kit for each sample, plus pooling of all barcoded samples into a LoBind tube (1.5 mL).
