@@ -1,0 +1,24 @@
+\contentsline {chapter}{\numberline {1}About this GitBook}{5}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Prerequisites, equipment and consumables}{9}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Prerequisites}{9}{section.2.1}%
+\contentsline {section}{\numberline {2.2}DNA extraction kit}{9}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Other consumables}{10}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Protocols}{11}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Equipment}{11}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Computational resources and database}{11}{section.2.6}%
+\contentsline {chapter}{\numberline {3}Protocol}{13}{chapter.3}%
+\contentsline {section}{\numberline {3.1}DNA extraction}{13}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Checklist}{13}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Steps}{13}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Amplification of 16S-ITS-23 operon}{14}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Checklist}{14}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}PCR}{14}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}PCR product clean-up}{16}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Checklist}{16}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Steps}{16}{subsection.3.3.2}%
+\contentsline {section}{\numberline {3.4}Library preparation}{17}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Checklist}{20}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Steps}{20}{subsection.3.4.2}%
+\contentsline {section}{\numberline {3.5}Priming and loading of flow cell - run start}{23}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Checklist}{23}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Steps}{23}{subsection.3.5.2}%

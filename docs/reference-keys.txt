@@ -19,4 +19,8 @@ pcr-product-clean-up
 checklist-2
 steps-1
 library-preparation
-outline-of-steps
+checklist-3
+steps-2
+priming-and-loading-of-flow-cell---run-start
+checklist-4
+steps-3

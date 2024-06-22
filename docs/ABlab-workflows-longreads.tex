@@ -80,7 +80,7 @@
 
 \title{A protocol for sequencing and analysing 16S-ITS-23S amplicons using Oxford Nanopore's Native Barcoding kit to profile prokaryotes on species-level in a mixed community {[}Under development{]}}
 \author{\href{https://www.rmit.edu.au/contact/staff-contacts/academic-staff/k/krohn---christian}{Christian Krohn, PhD, RMIT University}}
-\date{2024-06-17}
+\date{2024-06-22}
 
 \begin{document}
 \maketitle
@@ -125,7 +125,7 @@ Before that, after a career in one of the most fast-cycled and short-sighted man
 
 This work is licensed under a Creative Commons Attribution 4.0 International License.
 
-\chapter{Prerequisites and consumables}\label{prerequisites}
+\chapter{Prerequisites, equipment and consumables}\label{prerequisites}
 
 \section{Prerequisites}\label{prerequisites-1}
 
@@ -134,7 +134,13 @@ This work is licensed under a Creative Commons Attribution 4.0 International Lic
 \item
   Experience with basic molecular laboratory techniques and DNA quality control (use of laminar flow hood, pipetting micro volumes, handling and preserving small volume reagents, sterilisation of consumables, doing gel electrophoresis)
 \item
-  Experience with loading Nanopore flowcells (for example by doing a test run with Lambda DNA using the \href{https://store.nanoporetech.com/control-expansion.html}{Control Expansion Kit})\\
+  Experience with loading Nanopore flowcells
+
+  \begin{itemize}
+  \tightlist
+  \item
+    It is vital that loading of the flowcell is practiced.The key is to avoid any air entering the flow cell as that will completely destroy the pores. Use an old flowcell if available and run through the process with water to see where the buffers flow. Afterwards we recommend doing a Control run with Lambda DNA using the \href{https://store.nanoporetech.com/control-expansion.html}{Control Expansion Kit}).
+  \end{itemize}
 \item
   Confident with R, R Studio and package environment managers such as Conda and Docker. Knowledge in shell scripting and Linux syntax.
 \end{itemize}
@@ -170,7 +176,7 @@ We commonly extract DNA from soils or from wastewater sludges using the DNeasy P
 \item
   DNeasy Powersoil Pro Kit (\#47016, Qiagen)
 \item
-  Qubit 1X dsDNA BR Assay Kit (Q33266, Thermo Fisher)
+  Qubit 1X dsDNA BR or HR Assay Kit (Q33266 or Q33231, Thermo Fisher)
 \item
   Eppendorf LoBind tubes (Eppendorf)
 \item
@@ -218,11 +224,15 @@ We commonly extract DNA from soils or from wastewater sludges using the DNeasy P
 \item
   PCR thermal cycler.
 \item
-  Magnets for 96-well plates and 1.5 ml tubes
+  Magnets for 96-well plates and 1.5 ml tubes.
 \item
   Gel electrophoresis equipment.
 \item
   Vortex. We use the Vortex-Genie 2, including the 24 x 2 ml tube adapter for bead beating.
+\item
+  Hula mixer (\#15920D, Thermo Fisher) or similar overhead mixers.
+\item
+  Eppendorf LoBind tubes (Eppendorf)
 \end{itemize}
 
 \section{Computational resources and database}\label{computational-resources-and-database}
@@ -266,7 +276,7 @@ We commonly extract DNA from soils or from wastewater sludges using the DNeasy P
 \item
   Measure DNA concentration using a Qubit fluorometer.
 \item
-  Into a 96-well plate, normalise extracted DNA to required PCR concentrations. For example, if 10 ng template is required for PCR, normalise DNA to 5 ng/µL.\\
+  Into a 96-well plate, normalise extracted DNA to required PCR concentrations. For example, if 10 ng template is required for PCR, normalise DNA to 5 ng/µL.
 \item
   Store DNA at 4˚C until library preparation - no more than 1 week.
 \item
@@ -288,13 +298,13 @@ We commonly extract DNA from soils or from wastewater sludges using the DNeasy P
 \item
   10 µM Reverse Primer U2428R (CCRAMCTGTCTCACGACG) \citep{Martijn2019}
 \item
-  JetSeq Clean Magnetic beads - or equivalent (MER-BIO-68031, Millenium Science) - to clean up PCR products\\
+  JetSeq Clean Magnetic beads - or equivalent (MER-BIO-68031, Millenium Science) - to clean up PCR products
 \item
-  twin.tec® PCR plate 96 LoBind, semi skirted (0030129504, Eppendorf)\\
+  twin.tec® PCR plate 96 LoBind, semi skirted (0030129504, Eppendorf)
 \item
   Nuclease-free water
 \item
-  10 mM Tris-HCl pH 8.0 with 50 mM NaCl (UltraPure™ 1M Tris-HCI, pH 8.0 \#15568025 \& NaCl (5 M), RNase-free \#AM9760G, Thermo Fisher)\\
+  10 mM Tris-HCl pH 8.0 with 50 mM NaCl (UltraPure™ 1M Tris-HCI, pH 8.0 \#15568025 \& NaCl (5 M), RNase-free \#AM9760G, Thermo Fisher)
 \item
   HyperLadder 1kb (BIO-33025, Bioline, Millenium Science)
 \item
@@ -308,7 +318,7 @@ We commonly extract DNA from soils or from wastewater sludges using the DNeasy P
 \begin{itemize}
 \tightlist
 \item
-  Do not vortex tubes during library preparation and use wide-bore tips to prevent DNA fragmentation. Fragmentation of amplicons may lead to incomplete reads.\\
+  Do not vortex tubes during library preparation to prevent DNA fragmentation. Fragmentation of amplicons may lead to incomplete reads.
 \item
   The primer amplifies the whole rrn operon.
 \end{itemize}
@@ -318,7 +328,7 @@ Benefits of targeting the whole rrn operon:
 \begin{itemize}
 \tightlist
 \item
-  Superior species-level resolution and accuracy \citep{Cusco2018, Srinivas2024}.\\
+  Superior species-level resolution and accuracy \citep{Cusco2018, Srinivas2024}.
 \item
   Covers Bacteria and Archaea.
 \end{itemize}
@@ -328,21 +338,21 @@ Risks of targeting the whole rrn operon:
 \begin{itemize}
 \tightlist
 \item
-  Not as representative of true abundances as full-length 16S amplicons.\\
+  Not as representative of true abundances as full-length 16S amplicons.
 \item
   Species with unlinked 16S and 23S rrn DNA will be missed with this approach (for example \textless{} 9\% of rRNA genes in wastewater sludge \citep{Brewer2020}).
 \end{itemize}
 
 \subsection{PCR}\label{pcr}
 
-Time required \textasciitilde4 hrs incl.~2hrs, 40mins PCR.
+Time required: \textasciitilde4 hrs incl.~2hrs, 40mins PCR.
 
 \begin{itemize}
 \tightlist
 \item
-  Prepare a mastermix for required number of 50 µl reactions (Table 3.1). Note that in our experience at least two 50 µl reactions are required to produce sufficient amplicon concentrations (200 fmol) for the Native Barcoding Kit from Oxford Nanopore.\\
+  Prepare a PCR mastermix for the required number of 50-µl reactions (Table 3.1). It may be necessary to combine two 50 µl reactions for each sample to produce sufficient amplicon mass for a final concentration of 200 fmol as input for the Native Barcoding Kit from Oxford Nanopore.
 \item
-  Add 3 µl of eDNA (5ng /µl) into a 96-well plate (e.g.~Eppendorf twin.tec® PCR plate 96 LoBind, semi-skirted) using a multichannel pipette.\\
+  Add 3 µl of eDNA (5ng /µl) into a 96-well plate (e.g.~Eppendorf twin.tec® PCR plate 96 LoBind, semi-skirted) using a multichannel pipette.
 \item
   Add 47 µl of mastermix using a multichannel pipette and carefully pipette up and down 10 x
 \item
@@ -356,16 +366,15 @@ Time required \textasciitilde4 hrs incl.~2hrs, 40mins PCR.
 \textbf{Important}:
 
 \begin{itemize}
-\tightlist
 \item
-  Use hot start polymerase for ease of use, with high fidelity/accuracy and one that is suitable for long amplicons. For example, Q5 High- Fidelity DNA Polymerase kit (New England Biolabs) with GC enhancer \citep{Martijn2019}.\\
+  Use hot start polymerase for ease of use, with high fidelity/accuracy and one that is suitable for long amplicons. For example, Q5 High- Fidelity DNA Polymerase kit (New England Biolabs) with GC enhancer \citep{Martijn2019}.
 \item
-  ≤ 200 fmol is required per sample for the Native Barcoding Kit from ONP. Based on 4.25 kb (4-4.5kb), the final DNA concentration after cleaning up PCR products should be no less than 48 ng/µL (at 11.5 µl input volume) - giving 552 ng of 4.25kb amplicons.\\
+  ≤ 200 fmol is required per sample for the Native Barcoding Kit from ONP. Based on 4.25 kb (4-4.5kb), the final DNA concentration after cleaning up PCR products should be no less than 48 ng/µL (at 11.5 µl input volume) - giving 552 ng of 4.25kb amplicons.
 \item
-  It may require two--three PCR reactions to achieve the required DNA amount (200 fmol); e.g.~pool 2--3 x 50µl PCR products, clean combined and elude in 32.5 µl Tris.
-\end{itemize}
+  It may require two PCR reactions to achieve the required DNA amount (200 fmol); e.g.~pool 2 x 50µl PCR products, clean combined and elude in 32.5 µl Tris.
 
-~ ~
+  ~ ~
+\end{itemize}
 
 \begin{table}
 
@@ -415,24 +424,30 @@ Cycle conditions\\
 
 \section{PCR product clean-up}\label{pcr-product-clean-up}
 
-Clean with 0.6X JetSeq Clean Magnetic beads (or equivalent) and wash twice with 80\% ethanol. This follows a similar protocol to the Illumina 16S-metagenomics library prep guide.
+Clean with 0.6X JetSeq Clean Magnetic beads (or equivalent) and wash twice with 80\% ethanol. This follows a similar protocol to the Illumina 16S-metagenomics library prep guide in case you are familiar with that.
 
-Time required \textasciitilde{} 1 hr per 24 samples.
+Time required: \textasciitilde{} 1 hr per 24 samples.
 
 \subsection{Checklist}\label{checklist-2}
 
 \begin{itemize}
 \tightlist
 \item
-  Magnet for 96-well plate
+  Magnetic rack for 96-well plate (e.g.~\#AM10027 Thermo Fisher)
 \item
-  80\% ethanol, freshly prepared in nuclease-free water\\
+  80\% ethanol, freshly prepared in nuclease-free water
 \item
   Nuclease-free water
 \item
   10 mM Tris-HCl pH 8.0 with 50 mM NaCl (UltraPure™ 1M Tris-HCI, pH 8.0 \#15568025 \& NaCl (5 M), RNase-free \#AM9760G, Thermo Fisher)
 \item
-  JetSeq Clean Magnetic beads (MER-BIO-68031, Millenium Science) or equivalent - to clean up PCR products.
+  JetSeq Clean Magnetic beads (MER-BIO-68031, Millenium Science) or equivalent - to clean up PCR products
+\item
+  Qubit 1X dsDNA BR or HR Assay Kit (Q33266 or Q33231, Thermo Fisher)
+\item
+  HyperLadder 1kb (BIO-33025, Bioline, Millenium Science)
+\item
+  A worksheet to enter concentrations to calculate volumes to normalise DNA to 200 fmol
 \end{itemize}
 
 \textbf{Notes}
@@ -444,15 +459,15 @@ Use wide bore tips for adding mag beads and subsequent (careful) mixing by pipet
 \begin{itemize}
 \tightlist
 \item
-  Pool replicate reactions into one well - e.g.~3 x 50 µl = 150 µl in one well.
+  Pool replicate reactions into one well - e.g.~2 x 50 µl = 100 µl in one well.
 \item
-  Using a multi channel pipette, add 0.6X beads to PCR products in the same wells (e.g.~90 µl to 150 µl pooled reactions), pipette 10 x up and down and/or a gentle vortex after sealing the plate, careful not to spill (Vortex Genie speed 2).
+  Using a multi-channel pipette, add 0.6X beads to PCR products in the same wells (e.g.~60 µl to 100 µl pooled reactions), pipette 10 x up and down and/or a gentle vortex after sealing the plate, careful not to spill (Vortex Genie speed 2).
 \item
   10 min incubation at RT
 \item
-  Place 5 mins on 96-well magnet and remove supernatant.
+  Place plate on a magnetic rack for 5 mins and remove supernatant.
 \item
-  Wash twice with 200 µl 80\% OH in same 96-well plate and let alcohol evaporate for \textasciitilde{} 5 mins or until alcohol is completely removed.
+  Wash twice with 200 µl 80\% ethanol in same 96-well plate, discard ethanol and let evaporate for \textasciitilde{} 5 mins or until completely removed.
 \item
   Take plate off magnet and elude pellet to a volume that provides appropriate DNA concentrations
 
@@ -463,65 +478,229 @@ Use wide bore tips for adding mag beads and subsequent (careful) mixing by pipet
   \item
     Hence, pipetting up and down 20--30 x may be necessary to carefully wash the pellet of the tube wall, using a wide bore tip.
   \item
-    Or centrifuge plate at 200-500 rcf for 1 min.
+    And/or centrifuge plate at 200 rcf for 1 min.
   \end{itemize}
 \item
-  Off-magnet, incubate in final elution (incl.~beads) for 15 minutes at 37°C. Every 2 minutes, agitate the sample by gently vortexing the plate for 10 seconds (after sealing plate) to encourage DNA elution.
+  Off-magnet, incubate plate for 15 minutes at 37°C (e.g.~in a water bath with only the wells submerged in water). Every 2 minutes, agitate the sample by gently vortexing the plate for 10 seconds (after sealing plate) to encourage DNA elution - and spin plate down.
 \item
-  Collect 30 µl of cleaned DNA after \textasciitilde{} 5 mins on magnet using wide bore tips.
+  Collect 32 µl of cleaned DNA after \textasciitilde{} 5 mins on magnet using wide bore tips.
 \item
-  Quantify and record amplicon concentrations using Qubit HS or BS chemistry and record values. Based on 4.25 kb amplicons (4-4.5kb), the final DNA concentration after cleaning up PCR products should be no less than 48 ng/µL to have sufficient material for downstream library preparation (200 fmol, \textgreater{} 552 ng of 4.25kb amplicons).
+  Quantify and record amplicon concentrations using Qubit HS or BS chemistry and record values. Based on 4 kb amplicons, the final DNA concentration after cleaning up PCR products should be no less than 45 ng/µL to have sufficient material for downstream library preparation (200 fmol, \textgreater{} 520 ng of 4 kb amplicons).
 \item
-  Verify amplification length via 1\% agarose gel electrophoresis @ 100V for 30 min including a 1 kb ladder.
+  Verify amplification length via 0.5-1\% agarose gel electrophoresis @ 100V for 30 min including a 1 kb ladder.
 \item
-  For each sample calculate volumes required of cleaned DNA and H\textsubscript{2}0 to get 200 fmol in 11.5 µl - for library preparation with the Native Barcoding Kit from Oxford Nanopore. Use V1 = C2*V2 / C1, where V1 = x, C1 = DNA concentrations (ng/µl), C2 = 48 ng/µl, V2 = 11.5 µl). H\textsubscript{2}0 volume = 11.5 µl - V1. These volumes will be used in the next step.
+  For each sample calculate volumes required of cleaned DNA and H\textsubscript{2}0 to get 200 fmol in 11.5 µl - for library preparation with the Native Barcoding Kit from Oxford Nanopore. Use V1 = C2*V2 / C1, where V1 = x, C1 = DNA concentrations (ng/µl), C2 = 45.22 ng/µl, V2 = 11.5 µl). H\textsubscript{2}0 volume = 11.5 µl - V1. These volumes will be used in the next step.
 \end{itemize}
+
+\hfill\break
+
+\begin{figure}
+\centering
+\includegraphics[width=3.125in,height=\textheight]{./img/PCR_gel.jpg}
+\caption{Gel confirming amplification of \textasciitilde4 kb amplicons}
+\end{figure}
+
+\hfill\break
+
+\begin{figure}
+\centering
+\includegraphics[width=4.16667in,height=\textheight]{./img/PCR_minDNA.png}
+\caption{Volumes to normalise to 200 fmol (Example)}
+\end{figure}
+
+\hfill\break
+
+\begin{figure}
+\centering
+\includegraphics[width=3.125in,height=\textheight]{./img/PCR_C1V1.png}
+\caption{Example of a worksheet for calculating volumes (µl) of PCR products and H\textsubscript{2}0 to get 200 fmol in 11.5 µl, required as input for each sample with the Native Barcoding Kit}
+\end{figure}
+
+~
 
 \section{Library preparation}\label{library-preparation}
 
-DNA Library preparation, including multiplexing and pooling of different samples. Here the 16S-ITS-23S rRNA operon was amplified from environmental DNA during PCR.
+DNA Library preparation, including barcoding and pooling of samples (multiplexing). Here the DNA input are \textgreater4 kb amplicons of the 16S-ITS-23S rRNA operon from environmental DNA. The Long Fragment Buffer (LFB) is used (not the Short Fragment Buffer)
+
+Time required: \textasciitilde{} 6 hours from start to finished library ready for loading.
 
 \textbf{Notes}
 
 \begin{itemize}
 \tightlist
 \item
-  Follow the protocol \textbf{Native Barcoding Kit 96 V14 (SQK-NBD114.96)} from Oxford Nanopore.
+  Follow the protocol \texttt{Ligation\ sequencing\ amplicons\ -\ Native\ Barcoding\ Kit\ 96\ V14\ (SQK-NBD114.96)-minion.pdf} available on nanoporetech.com. For details about the barcodes check here: \url{https://community.nanoporetech.com/technical_documents/chemistry-technical-document/v/chtd_500_v1_revaq_07jul2016/barcode-sequences}. For final library calculations we assume hat around 300 bps are added to the amplicons with barcodes, flanking sequences and adapters but have not verified. If you know more - let us know on the Github discussion section.
 \item
   Update the MinION packages and MinKNOW software.
 \item
-  Prepare a sample sheet for upload to instrument (to save time when setting up the sequencing in MinKNOW)
-\item
-  Check and record which basecaller is used in the most recent MINKNOW software update. Should be Dorado.
-\item
-  Print out and follow the Kit's protocol and checklist (\texttt{Ligation\ sequencing\ amplicons\ -\ Native\ Barcoding\ Kit\ 96\ V14\ (SQK-NBD114.96)-minion.pdf}).
+  Prepare a sample sheet for upload to instrument if desired (not essential but saves a little time when setting up the sequencing in MinKNOW). More info on how to upload sample sheets \href{https://community.nanoporetech.com/docs/prepare/library_prep_protocols/experiment-companion-minknow/v/mke_1013_v1_revdc_11apr2016/sample-sheet-upload}{here}.
 \item
   Amplicon product yields from PCR can vary widely depending on environmental source.
-
-  \begin{itemize}
-  \tightlist
-  \item
-    To achieve consistent (normalised) concentrations (200 fmol) across all samples, add appropriate input volume (calculated with C1\emph{V1 = C2}V2) and fill to 11.5 µl with H20 to the first step of the Native Barcoding kit protocol (`Ligation sequencing amplicons - Native Barcoding Kit 96 V14 (SQK-NBD114.96)-minion.pdf'.
-  \item
-    If concentration was lower than the required 200 fmol for a sample, the input volume of the end-prepped amplicons into the second step of the protocol (native barcode ligation step) may have to be increased accordingly.
-  \end{itemize}
+\item
+  To achieve consistent, normalised concentrations (200 fmol) across all samples, add appropriate input volume (calculated with C1*V1 = C2*V2) and fill to 11.5 µl with H\textsubscript{2}0 to the first step of the Native Barcoding kit protocol.
+\item
+  If you plan to sequence after library preparations, insert a flow cell now and do a flow cell check and record the number of pores. This will take around 10 minutes. Afterwards store it at 4˚C until ready to load.
 \end{itemize}
 
-\subsection{Outline of steps}\label{outline-of-steps}
+\subsection{Checklist}\label{checklist-3}
 
 \begin{itemize}
 \tightlist
 \item
-  End-prep DNA of 11.5 µL DNA (200 fmol).
+  Native Barcoding Kit (Oxford Nanopore, SQK-NBD114.96)
+
+  \begin{itemize}
+  \tightlist
+  \item
+    End-prep
+
+    \begin{itemize}
+    \tightlist
+    \item
+      DNA Control Sample (DCS)
+    \item
+      Elution Buffer (EB)
+    \end{itemize}
+  \item
+    Native barcode ligation
+
+    \begin{itemize}
+    \tightlist
+    \item
+      AMPure XP Beads (AXP)
+    \item
+      EDTA
+    \item
+      Native Barcodes (NB01-96)
+    \end{itemize}
+  \item
+    Sequencing adapter ligation
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Native Adapter (NA)
+    \item
+      Elution Buffer (EB)
+    \item
+      AMPure XP Beads (AXP)
+    \item
+      Long Fragment Buffer (LFB)
+    \end{itemize}
+  \end{itemize}
 \item
-  Native barcode ligation using 0.75 µL of end-prepped DNA using one of 96 barcodes from the kit incl.~pooling of barcoded samples into LoBind tube (1.5 mL).
+  NEBNext Quick Ligation Module (E6056, New England Biolab)
 \item
-  Bead clean-up and elution of 35 µL of pooled library and Qubit.
+  NEBNext Ultra II End repair/dA-tailing Module (E7546S, New England Biolab)
 \item
-  SAFE STOP: store at 4 ˚C overnight if needed.
+  Blunt/TA Ligase Master Mix (M0367, New England Biolab)
 \item
-  Adapter ligation to get a final library of 35--50 fmol at 12 µL.
+  80\% ethanol, freshly prepared in nuclease-free water
+\item
+  Nuclease-free water
+\item
+  Qubit 1X dsDNA BR or HR Assay Kit (Q33266 or Q33231, Thermo Fisher)
+\item
+  Eppendorf LoBind tubes (Eppendorf)
+\item
+  Magnet for 1.5 ml tubes
+\item
+  Hula mixer (\#15920D, Thermo Fisher) or similar overhead mixers
 \end{itemize}
+
+\subsection{Steps}\label{steps-2}
+
+\textbf{Follow the Nanopore protocol. There are four parts:}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  End-prepping of 11.5 µL DNA (200 fmol).\\
+  Pipetting into the 96-well plate may take time as there are two rounds of pipetting, one for the DNA amplicon volumes and one for H\textsubscript{2}0 volumes to get 200 fmol amplicon DNA in 11.5 µl, as well as the remaining reagents for end-prepping the DNA. It is not possible to use multichannel pipettes for this step.
+\item
+  Native barcode ligation using 0.75 µL of end-prepped DNA using one of 96 barcodes from the kit for each sample, plus pooling of all barcoded samples into a LoBind tube (1.5 mL).
+\item
+  Bead clean-up of pooled end-prepped DNA library and elution of 35 µL volume; quantification with Qubit 1X dsDNA HS Assay Kit. We used the all of the available end-prepped volume (e.g.~33 µl after Qubit quantification) for the next step, i.o. only 30 µl as per protocol.
+
+  SAFE STOP: Store at 4 ˚C overnight if needed.
+\item
+  Adapter ligation. Once this step is completed, you get a final volume of 15 µl of clean end-prepped/barcoded/adapter ligated DNA.
+
+  \begin{itemize}
+  \item
+    We have stored the library at 4˚C overnight and sucessfully sequenced it the next day (although it is preferred to sequence right after adapter ligation).
+  \item
+    The concentration we achieved was \textasciitilde20-25 ng/µl, which means there was sufficient DNA for two runs. After quantify DNA concentrations with 1 µl DNA there are 14 µl left.
+  \item
+    Nanopore's recommended loading concentrations are 35--50 fmol at 12 µL volume. For example, at a concentration of 25.3 ng/µl (4.300 kb amplicon) a total of 5.50 µl of DNA library (plus 6.50 µl H\textsubscript{2}0) are sufficient. The remaining 6.50 µl DNA library can be stored in fridge overnight if required.
+  \end{itemize}
+\end{enumerate}
+
+\begin{figure}
+\centering
+\includegraphics[width=3.125in,height=\textheight]{./img/barcode_ligation.png}
+\caption{The Native Barcode Kit comes with 96 individual barcodes}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=5.20833in,height=\textheight]{./img/libraryprepcleanup_comb.png}
+\caption{Bead clean-up of pooled end-prepped and adapter-ligated DNA library}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=3.125in,height=\textheight]{./img/libraryprepsminDNA.png}
+\caption{Final library concentration (Example)}
+\end{figure}
+
+\section{Priming and loading of flow cell - run start}\label{priming-and-loading-of-flow-cell---run-start}
+
+Time required: \textasciitilde{} 10-15 mins.
+
+\subsection{Checklist}\label{checklist-4}
+
+\begin{itemize}
+\tightlist
+\item
+  The same protocol: \texttt{Ligation\ sequencing\ amplicons\ -\ Native\ Barcoding\ Kit\ 96\ V14\ (SQK-NBD114.96)-minion.pdf} available on nanoporetech.com
+\item
+  Bovine Serum Albumin (BSA) (50 mg/ml) (AM2616, InvitrogenTM UltraPure)
+\item
+  Native Barcoding Kit (Oxford Nanopore, SQK-NBD114.96)
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Flow Cell Flush (FCF)
+  \item
+    Flow Cell Tether (FCT)
+  \item
+    Sequencing Buffer (SB)
+  \item
+    Library Beads (LIB)
+  \end{itemize}
+\item
+  R10.4.1 flowcell (Oxford Nanopore, FLO-MIN114)
+\end{itemize}
+
+\subsection{Steps}\label{steps-3}
+
+\textbf{Follow the Nanopore protocol. There are five steps:}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Preparation and loading of sequencing buffer and wait for 5 minutes.
+\item
+  Preparation of library. Nanopore's protocol recommends loading 35--50 fmol at 12 µL volume.
+\item
+  Loading of remaining sequencing buffer
+\item
+  Loading of library
+\item
+  Setting up the run and press start!
+\end{enumerate}
 
   \bibliography{book.bib,packages.bib}
 
