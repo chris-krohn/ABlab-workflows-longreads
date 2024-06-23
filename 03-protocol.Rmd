@@ -140,11 +140,11 @@ Use wide bore tips for adding mag beads and subsequent (careful) mixing by pipet
 
 \
 
-![Volumes to normalise to 200 fmol (Example). ](./img/PCR_minDNA.png){width="400"}
+![Target concentration of library to normalise to 200 fmol based on a 4 kb amplicon . ](./img/PCR_minDNA.png){width="400"}
 
 \
 
-![Example of a worksheet for calculating volumes (µl) of PCR products and H~2~0 to get 200 fmol in 11.5 µl, required as input for each sample with the Native Barcoding Kit. C1 = DNA concentration (ng/µl), C2 (library concentration) = 45.22 ng/µl, V2 (H~2~0 volume) = 11.5 µl.](./img/PCR_C1V1.png){width="300"}
+![Example of a worksheet for calculating volumes (µl) of PCR products and H~2~0 to get 200 fmol in 11.5 µl, required as input for each sample with the Native Barcoding Kit. C1 = DNA concentration (ng/µl), C2 (library concentration) = 45.22 ng/µl, V2 (target volume) = 11.5 µl.](./img/PCR_C1V1.png){width="300"}
 
  
 
