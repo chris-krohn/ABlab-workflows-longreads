@@ -24,3 +24,7 @@ steps-2
 priming-and-loading-of-flow-cell---run-start
 checklist-4
 steps-3
+flow-cell-wash
+checklist-5
+steps-4
+basecalling

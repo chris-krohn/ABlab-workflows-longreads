@@ -113,7 +113,7 @@ Time required: \~ 1 hr per 24 samples.
 -   HyperLadder 1kb (BIO-33025, Bioline, Millenium Science)
 -   A worksheet to enter concentrations to calculate volumes to normalise DNA to 200 fmol
 
-**Notes**
+**Note**
 
 Use wide bore tips for adding mag beads and subsequent (careful) mixing by pipetting to minimise DNA fragmentation.
 
@@ -140,11 +140,11 @@ Use wide bore tips for adding mag beads and subsequent (careful) mixing by pipet
 
 \
 
-![Volumes to normalise to 200 fmol (Example)](./img/PCR_minDNA.png){width="400"}
+![Volumes to normalise to 200 fmol (Example). ](./img/PCR_minDNA.png){width="400"}
 
 \
 
-![Example of a worksheet for calculating volumes (µl) of PCR products and H~2~0 to get 200 fmol in 11.5 µl, required as input for each sample with the Native Barcoding Kit](./img/PCR_C1V1.png){width="300"}
+![Example of a worksheet for calculating volumes (µl) of PCR products and H~2~0 to get 200 fmol in 11.5 µl, required as input for each sample with the Native Barcoding Kit. C1 = DNA concentration (ng/µl), C2 (library concentration) = 45.22 ng/µl, V2 (H~2~0 volume) = 11.5 µl.](./img/PCR_C1V1.png){width="300"}
 
  
 
@@ -156,12 +156,12 @@ Time required: \~ 6 hours from start to finished library ready for loading.
 
 **Notes**
 
--   Follow the protocol `Ligation sequencing amplicons - Native Barcoding Kit 96 V14 (SQK-NBD114.96)-minion.pdf` available on nanoporetech.com. For details about the barcodes check here: <https://community.nanoporetech.com/technical_documents/chemistry-technical-document/v/chtd_500_v1_revaq_07jul2016/barcode-sequences>. For final library calculations we assume hat around 300 bps are added to the amplicons with barcodes, flanking sequences and adapters but have not verified. If you know more - let us know on the Github discussion section.
+-   Follow the protocol `Ligation sequencing amplicons - Native Barcoding Kit 96 V14 (SQK-NBD114.96)-minion.pdf` available on nanoporetech.com. For details about the barcodes check here: <https://community.nanoporetech.com/technical_documents/chemistry-technical-document/v/chtd_500_v1_revaq_07jul2016/barcode-sequences>. For final library calculations we assume that around 300 bps are added to the amplicons through barcodes, flanking sequences and adapters. If you know more - let us know on the Github discussion section.
 -   Update the MinION packages and MinKNOW software.
 -   Prepare a sample sheet for upload to instrument if desired (not essential but saves a little time when setting up the sequencing in MinKNOW). More info on how to upload sample sheets [here](https://community.nanoporetech.com/docs/prepare/library_prep_protocols/experiment-companion-minknow/v/mke_1013_v1_revdc_11apr2016/sample-sheet-upload).
 -   Amplicon product yields from PCR can vary widely depending on environmental source.
 -   To achieve consistent, normalised concentrations (200 fmol) across all samples, add appropriate input volume (calculated with C1\*V1 = C2\*V2) and fill to 11.5 µl with H~2~0 to the first step of the Native Barcoding kit protocol.
--   If you plan to sequence after library preparations, insert a flow cell now and do a flow cell check and record the number of pores. This will take around 10 minutes. Afterwards store it at 4˚C until ready to load.
+-   If you plan to sequence after library preparations, insert a flow cell now and do a **flow cell check** and record the number of pores. This will take around 10 minutes. Afterwards store it at 4˚C until ready to load. We got 1,500-1,750 pores with new flowcells (R10.4.1) that were stored for two weeks at 4 degrees.
 
 ### Checklist
 
@@ -207,17 +207,17 @@ Time required: \~ 6 hours from start to finished library ready for loading.
 
     -   The concentration we achieved was \~20-25 ng/µl, which means there was sufficient DNA for two runs. After quantify DNA concentrations with 1 µl DNA there are 14 µl left.
 
-    -   Nanopore's recommended loading concentrations are 35–50 fmol at 12 µL volume. For example, at a concentration of 25.3 ng/µl (4.300 kb amplicon) a total of 5.50 µl of DNA library (plus 6.50 µl H~2~0) are sufficient. The remaining 6.50 µl DNA library can be stored in fridge overnight if required.
+    -   Nanopore's recommended loading concentrations are 35–50 fmol at 12 µL volume. For example, at a concentration of 25.3 ng/µl (4,300 kb amplicon) a total of 5.50 µl of DNA library (plus 6.50 µl H~2~0) are sufficient. The remaining 6.50 µl DNA library can be stored in fridge overnight if required.
 
-![The Native Barcode Kit comes with 96 individual barcodes](./img/barcode_ligation.png){width="300"}
+![The Native Barcode Kit (SQK-NBD114.96) comes with 96 individual barcodes](./img/barcode_ligation.png){width="300"}\
 
-![Bead clean-up of pooled end-prepped and adapter-ligated DNA library](./img/libraryprepcleanup_comb.png){width="500"}
+![Bead clean-up of pooled end-prepped and adapter-ligated DNA library](./img/libraryprepcleanup_comb.png){width="500"}\
 
 ![Calculation to get library volume for loading (In this example we used 5.52 µl of library, plus 6.48µl H~2~0 for a final library volume of 12 µl at 50 fmol concentration)](./img/libraryprepsminDNA.png){width="300"}
 
 ## Priming and loading of flow cell - run start
 
-Time required: \~ 10-15 mins.
+Time required: \~10-15 mins for priming and loading. 24 hours for sequencing.
 
 ### Checklist
 
@@ -235,11 +235,38 @@ Time required: \~ 10-15 mins.
 **Follow the Nanopore protocol. There are five steps:**
 
 1.  Preparation and loading of sequencing buffer and wait for 5 minutes.
-
 2.  Preparation of library. Nanopore's protocol recommends loading 35–50 fmol at 12 µL volume.
-
 3.  Loading of remaining sequencing buffer
-
 4.  Loading of library
+5.  Setting up the run for 24 hours and press start! More details will follow about recommended hours and expected yield based on 24 samples.
 
-5.  Setting up the run and press start!
+## Flow cell wash
+
+Time required: \~ 1.5 hours.
+
+Wash the flow cell once the run has finished. Note that after the wash you can either load a new library directly afterwards or add storage buffer to load a new library later (always store flow at 4 ˚C).
+
+However, it is only possible to check the number of pores (and estimate potential yield) after adding storage buffer. The washing buffer is not suitable for a running a flow cell check. So loading a new library directly is only sensible if the user knows how many active pores to expect. Although, the instrument will do a pore scan at the start, it will be too late once you loaded the new library.
+
+As a gauge, we ran a flowcell with 1,500 pores for 24 hours (loaded with 24 barcoded samples of 16S-ITS-23S amplicons). At the end 558 active pores remained before the wash.
+
+Note that washing the flowcell does not interfer with any active basecalling processes on the Mk1C, which may take days to finish if High accuracy was chosen.
+
+### Checklist
+
+-   Flow Cell Wash Kit (e.g. EXP-WSH004, Oxford Nanopore)
+-   Protocol `Flow Cell Wash Kit (EXP-WSH004 or EXP-WSH004-XL)-minion.pdf` available on nanopore.com
+
+### Steps
+
+**Follow the Nanopore protocol. There are three steps:**
+
+1.  Preparation of 400 µl washing buffer
+2.  Load 200 µl of washing bufferm, wait 5 minutes, then add the remaining 200 µl and wait 1 hour.
+3.  If you plan to storage flowcell for later use - add storage buffer. Otherwise load new library.
+
+## Basecalling
+
+Time required: \~ several days depending on computational resources.
+
+**Details to follow**

@@ -80,7 +80,7 @@
 
 \title{A protocol for sequencing and analysing 16S-ITS-23S amplicons using Oxford Nanopore's Native Barcoding kit to profile prokaryotes on species-level in a mixed community {[}Under development{]}}
 \author{\href{https://www.rmit.edu.au/contact/staff-contacts/academic-staff/k/krohn---christian}{Christian Krohn, PhD, RMIT University}}
-\date{2024-06-22}
+\date{2024-06-23}
 
 \begin{document}
 \maketitle
@@ -95,9 +95,11 @@
 
 This GitBook is under development (2024).
 
-This GitBook provides a basic step-by-step protocol for students who want to get started with sequencing multiple samples of high quality, full-length microbial amplicons with an Oxford Nanopore instrument, and then process and visualise the data using various packages in R.
+This GitBook provides a step-by-step protocol for anyone who want to get started with sequencing multiple samples of high quality, full-length microbial amplicons (16S-ITS-23S) with an Oxford Nanopore instrument, and then process and visualise the data using various packages in R. The aim is to profile a community of bacteria and archaea on \textbf{species-level}.
 
-This protocol reflects the experiences we had in the lab and may help to get you started on your own journey of discovery. One of the biggest hurdles for students that embark on sequencing environmental DNA for the first time, is the effort required to learn new technologies, various coding languages, file types and formats, packages or platforms that are involved (think Unix, Linux, Slurm, Qiime, R, RMarkdown, python, conda, ggplot, docker, GitHub, data instances\ldots) before they even can start looking at exploring the data for biological meaning and producing publishable output. Hence, this protocol aims at lowering your `activation' energy by providing some guidance for each step from DNA extraction, to amplification, library preparation, sequencing, data processing and finally some basic visualisations in R.
+Read and use this protocol either directly or to develop your own.
+
+This protocol reflects the experiences we had in the lab and may help to get you started on your own journey of discovery. One of the biggest hurdles is the effort required to learn new technologies, hence this protocol aims at lowering your `activation' energy by providing some guidance for each step from DNA extraction, to amplification, library preparation, sequencing, data processing and finally some basic visualisations in R.
 
 This protocol uses the DNeasy Powersoil Pro Kit (Qiagen, Hilden, Germany) to extract DNA from wastewater sludge, as well as the Native Barcoding Kit (SQK-NBD114.96) with a R10.4.1 flowcell (FLO-MIN114) to sequence long (\textasciitilde4-4.4 kb) amplicons from environmental DNA. The primer used was developed by \citep{Martijn2019}. Initial costs to purchase all consumables will be \textasciitilde AUD\$7,700.
 
@@ -197,6 +199,8 @@ We commonly extract DNA from soils or from wastewater sludges using the DNeasy P
   HyperLadder 1kb (BIO-33025, Bioline, Millenium Science)
 \item
   80\% ethanol, freshly prepared in nuclease-free water
+\item
+  Flow Cell Wash Kit (e.g.~EXP-WSH004, Oxford Nanopore)
 \end{itemize}
 
 \section{Protocols}\label{protocols}
@@ -206,9 +210,11 @@ We commonly extract DNA from soils or from wastewater sludges using the DNeasy P
 \item
   A protocol for PCR amplification and clean-up (included in this Gitbook).
 \item
-  `Ligation sequencing amplicons - Native Barcoding Kit 96 V14' available on nanoporetech.com - Checklist and full protocol.
+  \texttt{Ligation\ sequencing\ amplicons\ -\ Native\ Barcoding\ Kit\ 96\ V14} available on nanoporetech.com.
 \item
   Prepare spreadsheets to normalise DNA into 96-well plates to avoid pipetting errors.
+\item
+  \texttt{Flow\ Cell\ Wash\ Kit\ (EXP-WSH004\ or\ EXP-WSH004-XL)-minion.pdf} available on nanopore.com.
 \end{itemize}
 
 \section{Equipment}\label{equipment}
@@ -240,7 +246,7 @@ We commonly extract DNA from soils or from wastewater sludges using the DNeasy P
 \begin{itemize}
 \tightlist
 \item
-  An instance or computer with ≥ 2 TB storage, ≥ 64 GB RAM and ≥ 32 CPUs
+  For basecalling the raw nanopore data (pod5 files) with dorado - an instance or computer is required with ≥ 2 TB storage, ≥ 16 GB RAM and either Nvidia A100 GPUs (Linux/Windows) or M1/M2 GPUs/CPUs (Mac). 64 GB RAM is recommended. Note that the MinION Mk1C can also basecall the data (much easier) but only at High Accuracy (HAC) and not at Super High Accuracy (SUP). SUP achieves \textasciitilde Q20 while HAC only \textasciitilde Q18. Note that basecalling can take days depending on the computational resources.
 \item
   16S-ITS-23S Database. To be confirmed.
 \end{itemize}
@@ -450,7 +456,7 @@ Time required: \textasciitilde{} 1 hr per 24 samples.
   A worksheet to enter concentrations to calculate volumes to normalise DNA to 200 fmol
 \end{itemize}
 
-\textbf{Notes}
+\textbf{Note}
 
 Use wide bore tips for adding mag beads and subsequent (careful) mixing by pipetting to minimise DNA fragmentation.
 
@@ -505,7 +511,7 @@ Use wide bore tips for adding mag beads and subsequent (careful) mixing by pipet
 \begin{figure}
 \centering
 \includegraphics[width=4.16667in,height=\textheight]{./img/PCR_minDNA.png}
-\caption{Volumes to normalise to 200 fmol (Example)}
+\caption{Volumes to normalise to 200 fmol (Example).}
 \end{figure}
 
 \hfill\break
@@ -513,7 +519,7 @@ Use wide bore tips for adding mag beads and subsequent (careful) mixing by pipet
 \begin{figure}
 \centering
 \includegraphics[width=3.125in,height=\textheight]{./img/PCR_C1V1.png}
-\caption{Example of a worksheet for calculating volumes (µl) of PCR products and H\textsubscript{2}0 to get 200 fmol in 11.5 µl, required as input for each sample with the Native Barcoding Kit}
+\caption{Example of a worksheet for calculating volumes (µl) of PCR products and H\textsubscript{2}0 to get 200 fmol in 11.5 µl, required as input for each sample with the Native Barcoding Kit. C1 = DNA concentration (ng/µl), C2 (library concentration) = 45.22 ng/µl, V2 (H\textsubscript{2}0 volume) = 11.5 µl.}
 \end{figure}
 
 ~
@@ -529,7 +535,7 @@ Time required: \textasciitilde{} 6 hours from start to finished library ready fo
 \begin{itemize}
 \tightlist
 \item
-  Follow the protocol \texttt{Ligation\ sequencing\ amplicons\ -\ Native\ Barcoding\ Kit\ 96\ V14\ (SQK-NBD114.96)-minion.pdf} available on nanoporetech.com. For details about the barcodes check here: \url{https://community.nanoporetech.com/technical_documents/chemistry-technical-document/v/chtd_500_v1_revaq_07jul2016/barcode-sequences}. For final library calculations we assume hat around 300 bps are added to the amplicons with barcodes, flanking sequences and adapters but have not verified. If you know more - let us know on the Github discussion section.
+  Follow the protocol \texttt{Ligation\ sequencing\ amplicons\ -\ Native\ Barcoding\ Kit\ 96\ V14\ (SQK-NBD114.96)-minion.pdf} available on nanoporetech.com. For details about the barcodes check here: \url{https://community.nanoporetech.com/technical_documents/chemistry-technical-document/v/chtd_500_v1_revaq_07jul2016/barcode-sequences}. For final library calculations we assume that around 300 bps are added to the amplicons through barcodes, flanking sequences and adapters. If you know more - let us know on the Github discussion section.
 \item
   Update the MinION packages and MinKNOW software.
 \item
@@ -539,7 +545,7 @@ Time required: \textasciitilde{} 6 hours from start to finished library ready fo
 \item
   To achieve consistent, normalised concentrations (200 fmol) across all samples, add appropriate input volume (calculated with C1*V1 = C2*V2) and fill to 11.5 µl with H\textsubscript{2}0 to the first step of the Native Barcoding kit protocol.
 \item
-  If you plan to sequence after library preparations, insert a flow cell now and do a flow cell check and record the number of pores. This will take around 10 minutes. Afterwards store it at 4˚C until ready to load.
+  If you plan to sequence after library preparations, insert a flow cell now and do a \textbf{flow cell check} and record the number of pores. This will take around 10 minutes. Afterwards store it at 4˚C until ready to load. We got 1,500-1,750 pores with new flowcells (R10.4.1) that were stored for two weeks at 4 degrees.
 \end{itemize}
 
 \subsection{Checklist}\label{checklist-3}
@@ -632,21 +638,13 @@ Time required: \textasciitilde{} 6 hours from start to finished library ready fo
   \item
     The concentration we achieved was \textasciitilde20-25 ng/µl, which means there was sufficient DNA for two runs. After quantify DNA concentrations with 1 µl DNA there are 14 µl left.
   \item
-    Nanopore's recommended loading concentrations are 35--50 fmol at 12 µL volume. For example, at a concentration of 25.3 ng/µl (4.300 kb amplicon) a total of 5.50 µl of DNA library (plus 6.50 µl H\textsubscript{2}0) are sufficient. The remaining 6.50 µl DNA library can be stored in fridge overnight if required.
+    Nanopore's recommended loading concentrations are 35--50 fmol at 12 µL volume. For example, at a concentration of 25.3 ng/µl (4,300 kb amplicon) a total of 5.50 µl of DNA library (plus 6.50 µl H\textsubscript{2}0) are sufficient. The remaining 6.50 µl DNA library can be stored in fridge overnight if required.
   \end{itemize}
 \end{enumerate}
 
-\begin{figure}
-\centering
-\includegraphics[width=3.125in,height=\textheight]{./img/barcode_ligation.png}
-\caption{The Native Barcode Kit comes with 96 individual barcodes}
-\end{figure}
+\includegraphics[width=3.125in,height=\textheight]{./img/barcode_ligation.png}\\
 
-\begin{figure}
-\centering
-\includegraphics[width=5.20833in,height=\textheight]{./img/libraryprepcleanup_comb.png}
-\caption{Bead clean-up of pooled end-prepped and adapter-ligated DNA library}
-\end{figure}
+\includegraphics[width=5.20833in,height=\textheight]{./img/libraryprepcleanup_comb.png}\\
 
 \begin{figure}
 \centering
@@ -656,7 +654,7 @@ Time required: \textasciitilde{} 6 hours from start to finished library ready fo
 
 \section{Priming and loading of flow cell - run start}\label{priming-and-loading-of-flow-cell---run-start}
 
-Time required: \textasciitilde{} 10-15 mins.
+Time required: \textasciitilde10-15 mins for priming and loading. 24 hours for sequencing.
 
 \subsection{Checklist}\label{checklist-4}
 
@@ -690,6 +688,7 @@ Time required: \textasciitilde{} 10-15 mins.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
+\tightlist
 \item
   Preparation and loading of sequencing buffer and wait for 5 minutes.
 \item
@@ -699,8 +698,51 @@ Time required: \textasciitilde{} 10-15 mins.
 \item
   Loading of library
 \item
-  Setting up the run and press start!
+  Setting up the run for 24 hours and press start! More details will follow about recommended hours and expected yield based on 24 samples.
 \end{enumerate}
+
+\section{Flow cell wash}\label{flow-cell-wash}
+
+Time required: \textasciitilde{} 1.5 hours.
+
+Wash the flow cell once the run has finished. Note that after the wash you can either load a new library directly afterwards or add storage buffer to load a new library later (always store flow at 4 ˚C).
+
+However, it is only possible to check the number of pores (and estimate potential yield) after adding storage buffer. The washing buffer is not suitable for a running a flow cell check. So loading a new library directly is only sensible if the user knows how many active pores to expect. Although, the instrument will do a pore scan at the start, it will be too late once you loaded the new library.
+
+As a gauge, we ran a flowcell with 1,500 pores for 24 hours (loaded with 24 barcoded samples of 16S-ITS-23S amplicons). At the end 558 active pores remained before the wash.
+
+Note that washing the flowcell does not interfer with any active basecalling processes on the Mk1C, which may take days to finish if High accuracy was chosen.
+
+\subsection{Checklist}\label{checklist-5}
+
+\begin{itemize}
+\tightlist
+\item
+  Flow Cell Wash Kit (e.g.~EXP-WSH004, Oxford Nanopore)
+\item
+  Protocol \texttt{Flow\ Cell\ Wash\ Kit\ (EXP-WSH004\ or\ EXP-WSH004-XL)-minion.pdf} available on nanopore.com
+\end{itemize}
+
+\subsection{Steps}\label{steps-4}
+
+\textbf{Follow the Nanopore protocol. There are three steps:}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Preparation of 400 µl washing buffer
+\item
+  Load 200 µl of washing bufferm, wait 5 minutes, then add the remaining 200 µl and wait 1 hour.
+\item
+  If you plan to storage flowcell for later use - add storage buffer. Otherwise load new library.
+\end{enumerate}
+
+\section{Basecalling}\label{basecalling}
+
+Time required: \textasciitilde{} several days depending on computational resources.
+
+\textbf{Details to follow}
 
   \bibliography{book.bib,packages.bib}
 

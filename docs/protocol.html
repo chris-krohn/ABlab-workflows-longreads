@@ -23,7 +23,7 @@
 <meta name="author" content="Christian Krohn, PhD, RMIT University" />
 
 
-<meta name="date" content="2024-06-22" />
+<meta name="date" content="2024-06-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -136,6 +136,12 @@ div.csl-indent {
 <li class="chapter" data-level="3.5.1" data-path="protocol.html"><a href="protocol.html#checklist-4"><i class="fa fa-check"></i><b>3.5.1</b> Checklist</a></li>
 <li class="chapter" data-level="3.5.2" data-path="protocol.html"><a href="protocol.html#steps-3"><i class="fa fa-check"></i><b>3.5.2</b> Steps</a></li>
 </ul></li>
+<li class="chapter" data-level="3.6" data-path="protocol.html"><a href="protocol.html#flow-cell-wash"><i class="fa fa-check"></i><b>3.6</b> Flow cell wash</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="protocol.html"><a href="protocol.html#checklist-5"><i class="fa fa-check"></i><b>3.6.1</b> Checklist</a></li>
+<li class="chapter" data-level="3.6.2" data-path="protocol.html"><a href="protocol.html#steps-4"><i class="fa fa-check"></i><b>3.6.2</b> Steps</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="protocol.html"><a href="protocol.html#basecalling"><i class="fa fa-check"></i><b>3.7</b> Basecalling</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -347,7 +353,7 @@ div.csl-indent {
 <li>HyperLadder 1kb (BIO-33025, Bioline, Millenium Science)</li>
 <li>A worksheet to enter concentrations to calculate volumes to normalise DNA to 200 fmol</li>
 </ul>
-<p><strong>Notes</strong></p>
+<p><strong>Note</strong></p>
 <p>Use wide bore tips for adding mag beads and subsequent (careful) mixing by pipetting to minimise DNA fragmentation.</p>
 </div>
 <div id="steps-1" class="section level3 hasAnchor" number="3.3.2">
@@ -379,14 +385,14 @@ div.csl-indent {
 <p><br />
 </p>
 <div class="float">
-<img src="img/PCR_minDNA.png" width="400" alt="Volumes to normalise to 200 fmol (Example)" />
-<div class="figcaption">Volumes to normalise to 200 fmol (Example)</div>
+<img src="img/PCR_minDNA.png" width="400" alt="Volumes to normalise to 200 fmol (Example)." />
+<div class="figcaption">Volumes to normalise to 200 fmol (Example).</div>
 </div>
 <p><br />
 </p>
 <div class="float">
-<img src="img/PCR_C1V1.png" width="300" alt="Example of a worksheet for calculating volumes (µl) of PCR products and H20 to get 200 fmol in 11.5 µl, required as input for each sample with the Native Barcoding Kit" />
-<div class="figcaption">Example of a worksheet for calculating volumes (µl) of PCR products and H<sub>2</sub>0 to get 200 fmol in 11.5 µl, required as input for each sample with the Native Barcoding Kit</div>
+<img src="img/PCR_C1V1.png" width="300" alt="Example of a worksheet for calculating volumes (µl) of PCR products and H20 to get 200 fmol in 11.5 µl, required as input for each sample with the Native Barcoding Kit. C1 = DNA concentration (ng/µl), C2 (library concentration) = 45.22 ng/µl, V2 (H20 volume) = 11.5 µl." />
+<div class="figcaption">Example of a worksheet for calculating volumes (µl) of PCR products and H<sub>2</sub>0 to get 200 fmol in 11.5 µl, required as input for each sample with the Native Barcoding Kit. C1 = DNA concentration (ng/µl), C2 (library concentration) = 45.22 ng/µl, V2 (H<sub>2</sub>0 volume) = 11.5 µl.</div>
 </div>
 <p> </p>
 </div>
@@ -397,12 +403,12 @@ div.csl-indent {
 <p>Time required: ~ 6 hours from start to finished library ready for loading.</p>
 <p><strong>Notes</strong></p>
 <ul>
-<li>Follow the protocol <code>Ligation sequencing amplicons - Native Barcoding Kit 96 V14 (SQK-NBD114.96)-minion.pdf</code> available on nanoporetech.com. For details about the barcodes check here: <a href="https://community.nanoporetech.com/technical_documents/chemistry-technical-document/v/chtd_500_v1_revaq_07jul2016/barcode-sequences" class="uri">https://community.nanoporetech.com/technical_documents/chemistry-technical-document/v/chtd_500_v1_revaq_07jul2016/barcode-sequences</a>. For final library calculations we assume hat around 300 bps are added to the amplicons with barcodes, flanking sequences and adapters but have not verified. If you know more - let us know on the Github discussion section.</li>
+<li>Follow the protocol <code>Ligation sequencing amplicons - Native Barcoding Kit 96 V14 (SQK-NBD114.96)-minion.pdf</code> available on nanoporetech.com. For details about the barcodes check here: <a href="https://community.nanoporetech.com/technical_documents/chemistry-technical-document/v/chtd_500_v1_revaq_07jul2016/barcode-sequences" class="uri">https://community.nanoporetech.com/technical_documents/chemistry-technical-document/v/chtd_500_v1_revaq_07jul2016/barcode-sequences</a>. For final library calculations we assume that around 300 bps are added to the amplicons through barcodes, flanking sequences and adapters. If you know more - let us know on the Github discussion section.</li>
 <li>Update the MinION packages and MinKNOW software.</li>
 <li>Prepare a sample sheet for upload to instrument if desired (not essential but saves a little time when setting up the sequencing in MinKNOW). More info on how to upload sample sheets <a href="https://community.nanoporetech.com/docs/prepare/library_prep_protocols/experiment-companion-minknow/v/mke_1013_v1_revdc_11apr2016/sample-sheet-upload">here</a>.</li>
 <li>Amplicon product yields from PCR can vary widely depending on environmental source.</li>
 <li>To achieve consistent, normalised concentrations (200 fmol) across all samples, add appropriate input volume (calculated with C1*V1 = C2*V2) and fill to 11.5 µl with H<sub>2</sub>0 to the first step of the Native Barcoding kit protocol.</li>
-<li>If you plan to sequence after library preparations, insert a flow cell now and do a flow cell check and record the number of pores. This will take around 10 minutes. Afterwards store it at 4˚C until ready to load.</li>
+<li>If you plan to sequence after library preparations, insert a flow cell now and do a <strong>flow cell check</strong> and record the number of pores. This will take around 10 minutes. Afterwards store it at 4˚C until ready to load. We got 1,500-1,750 pores with new flowcells (R10.4.1) that were stored for two weeks at 4 degrees.</li>
 </ul>
 <div id="checklist-3" class="section level3 hasAnchor" number="3.4.1">
 <h3><span class="header-section-number">3.4.1</span> Checklist<a href="protocol.html#checklist-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -452,17 +458,13 @@ Pipetting into the 96-well plate may take time as there are two rounds of pipett
 <ul>
 <li><p>We have stored the library at 4˚C overnight and sucessfully sequenced it the next day (although it is preferred to sequence right after adapter ligation).</p></li>
 <li><p>The concentration we achieved was ~20-25 ng/µl, which means there was sufficient DNA for two runs. After quantify DNA concentrations with 1 µl DNA there are 14 µl left.</p></li>
-<li><p>Nanopore’s recommended loading concentrations are 35–50 fmol at 12 µL volume. For example, at a concentration of 25.3 ng/µl (4.300 kb amplicon) a total of 5.50 µl of DNA library (plus 6.50 µl H<sub>2</sub>0) are sufficient. The remaining 6.50 µl DNA library can be stored in fridge overnight if required.</p></li>
+<li><p>Nanopore’s recommended loading concentrations are 35–50 fmol at 12 µL volume. For example, at a concentration of 25.3 ng/µl (4,300 kb amplicon) a total of 5.50 µl of DNA library (plus 6.50 µl H<sub>2</sub>0) are sufficient. The remaining 6.50 µl DNA library can be stored in fridge overnight if required.</p></li>
 </ul></li>
 </ol>
-<div class="float">
-<img src="img/barcode_ligation.png" width="300" alt="The Native Barcode Kit comes with 96 individual barcodes" />
-<div class="figcaption">The Native Barcode Kit comes with 96 individual barcodes</div>
-</div>
-<div class="float">
-<img src="img/libraryprepcleanup_comb.png" width="500" alt="Bead clean-up of pooled end-prepped and adapter-ligated DNA library" />
-<div class="figcaption">Bead clean-up of pooled end-prepped and adapter-ligated DNA library</div>
-</div>
+<p><img src="img/barcode_ligation.png" width="300" alt="The Native Barcode Kit (SQK-NBD114.96) comes with 96 individual barcodes" /><br />
+</p>
+<p><img src="img/libraryprepcleanup_comb.png" width="500" alt="Bead clean-up of pooled end-prepped and adapter-ligated DNA library" /><br />
+</p>
 <div class="float">
 <img src="img/libraryprepsminDNA.png" width="300" alt="Calculation to get library volume for loading (In this example we used 5.52 µl of library, plus 6.48µl H20 for a final library volume of 12 µl at 50 fmol concentration)" />
 <div class="figcaption">Calculation to get library volume for loading (In this example we used 5.52 µl of library, plus 6.48µl H<sub>2</sub>0 for a final library volume of 12 µl at 50 fmol concentration)</div>
@@ -471,7 +473,7 @@ Pipetting into the 96-well plate may take time as there are two rounds of pipett
 </div>
 <div id="priming-and-loading-of-flow-cell---run-start" class="section level2 hasAnchor" number="3.5">
 <h2><span class="header-section-number">3.5</span> Priming and loading of flow cell - run start<a href="protocol.html#priming-and-loading-of-flow-cell---run-start" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Time required: ~ 10-15 mins.</p>
+<p>Time required: ~10-15 mins for priming and loading. 24 hours for sequencing.</p>
 <div id="checklist-4" class="section level3 hasAnchor" number="3.5.1">
 <h3><span class="header-section-number">3.5.1</span> Checklist<a href="protocol.html#checklist-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
@@ -491,14 +493,43 @@ Pipetting into the 96-well plate may take time as there are two rounds of pipett
 <h3><span class="header-section-number">3.5.2</span> Steps<a href="protocol.html#steps-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>Follow the Nanopore protocol. There are five steps:</strong></p>
 <ol style="list-style-type: decimal">
-<li><p>Preparation and loading of sequencing buffer and wait for 5 minutes.</p></li>
-<li><p>Preparation of library. Nanopore’s protocol recommends loading 35–50 fmol at 12 µL volume.</p></li>
-<li><p>Loading of remaining sequencing buffer</p></li>
-<li><p>Loading of library</p></li>
-<li><p>Setting up the run and press start!</p></li>
+<li>Preparation and loading of sequencing buffer and wait for 5 minutes.</li>
+<li>Preparation of library. Nanopore’s protocol recommends loading 35–50 fmol at 12 µL volume.</li>
+<li>Loading of remaining sequencing buffer</li>
+<li>Loading of library</li>
+<li>Setting up the run for 24 hours and press start! More details will follow about recommended hours and expected yield based on 24 samples.</li>
 </ol>
-
 </div>
+</div>
+<div id="flow-cell-wash" class="section level2 hasAnchor" number="3.6">
+<h2><span class="header-section-number">3.6</span> Flow cell wash<a href="protocol.html#flow-cell-wash" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Time required: ~ 1.5 hours.</p>
+<p>Wash the flow cell once the run has finished. Note that after the wash you can either load a new library directly afterwards or add storage buffer to load a new library later (always store flow at 4 ˚C).</p>
+<p>However, it is only possible to check the number of pores (and estimate potential yield) after adding storage buffer. The washing buffer is not suitable for a running a flow cell check. So loading a new library directly is only sensible if the user knows how many active pores to expect. Although, the instrument will do a pore scan at the start, it will be too late once you loaded the new library.</p>
+<p>As a gauge, we ran a flowcell with 1,500 pores for 24 hours (loaded with 24 barcoded samples of 16S-ITS-23S amplicons). At the end 558 active pores remained before the wash.</p>
+<p>Note that washing the flowcell does not interfer with any active basecalling processes on the Mk1C, which may take days to finish if High accuracy was chosen.</p>
+<div id="checklist-5" class="section level3 hasAnchor" number="3.6.1">
+<h3><span class="header-section-number">3.6.1</span> Checklist<a href="protocol.html#checklist-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Flow Cell Wash Kit (e.g. EXP-WSH004, Oxford Nanopore)</li>
+<li>Protocol <code>Flow Cell Wash Kit (EXP-WSH004 or EXP-WSH004-XL)-minion.pdf</code> available on nanopore.com</li>
+</ul>
+</div>
+<div id="steps-4" class="section level3 hasAnchor" number="3.6.2">
+<h3><span class="header-section-number">3.6.2</span> Steps<a href="protocol.html#steps-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Follow the Nanopore protocol. There are three steps:</strong></p>
+<ol style="list-style-type: decimal">
+<li>Preparation of 400 µl washing buffer</li>
+<li>Load 200 µl of washing bufferm, wait 5 minutes, then add the remaining 200 µl and wait 1 hour.</li>
+<li>If you plan to storage flowcell for later use - add storage buffer. Otherwise load new library.</li>
+</ol>
+</div>
+</div>
+<div id="basecalling" class="section level2 hasAnchor" number="3.7">
+<h2><span class="header-section-number">3.7</span> Basecalling<a href="protocol.html#basecalling" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Time required: ~ several days depending on computational resources.</p>
+<p><strong>Details to follow</strong></p>
+
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
