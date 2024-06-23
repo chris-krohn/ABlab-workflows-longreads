@@ -19,10 +19,10 @@
 \contentsline {section}{\numberline {3.4}Library preparation}{17}{section.3.4}%
 \contentsline {subsection}{\numberline {3.4.1}Checklist}{20}{subsection.3.4.1}%
 \contentsline {subsection}{\numberline {3.4.2}Steps}{20}{subsection.3.4.2}%
-\contentsline {section}{\numberline {3.5}Priming and loading of flow cell - run start}{23}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Checklist}{23}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}Steps}{23}{subsection.3.5.2}%
-\contentsline {section}{\numberline {3.6}Flow cell wash}{23}{section.3.6}%
+\contentsline {section}{\numberline {3.5}Priming and loading of flow cell - run start}{21}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Checklist}{21}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Steps}{21}{subsection.3.5.2}%
+\contentsline {section}{\numberline {3.6}Flow cell wash}{24}{section.3.6}%
 \contentsline {subsection}{\numberline {3.6.1}Checklist}{24}{subsection.3.6.1}%
 \contentsline {subsection}{\numberline {3.6.2}Steps}{24}{subsection.3.6.2}%
-\contentsline {section}{\numberline {3.7}Basecalling}{24}{section.3.7}%
+\contentsline {section}{\numberline {3.7}Basecalling}{25}{section.3.7}%

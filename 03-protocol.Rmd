@@ -140,7 +140,7 @@ Use wide bore tips for adding mag beads and subsequent (careful) mixing by pipet
 
 \
 
-![Target concentration of library to normalise to 200 fmol based on a 4 kb amplicon . ](./img/PCR_minDNA.png){width="400"}
+![Target concentration of library to normalise to 200 fmol based on a 4 kb amplicon .](./img/PCR_minDNA.png){width="400"}
 
 \
 
@@ -209,9 +209,11 @@ Time required: \~ 6 hours from start to finished library ready for loading.
 
     -   Nanopore's recommended loading concentrations are 35–50 fmol at 12 µL volume. For example, at a concentration of 25.3 ng/µl (4,300 kb amplicon) a total of 5.50 µl of DNA library (plus 6.50 µl H~2~0) are sufficient. The remaining 6.50 µl DNA library can be stored in fridge overnight if required.
 
-![The Native Barcode Kit (SQK-NBD114.96) comes with 96 individual barcodes](./img/barcode_ligation.png){width="300"}\
+![The Native Barcode Kit (SQK-NBD114.96) comes with 96 individual barcodes](./img/barcode_ligation.png){width="300"}
 
-![Bead clean-up of pooled end-prepped and adapter-ligated DNA library](./img/libraryprepcleanup_comb.png){width="500"}\
+\
+
+![Bead clean-up of pooled end-prepped and adapter-ligated DNA library](./img/libraryprepcleanup_comb.png){width="500"}
 
 ![Calculation to get library volume for loading (In this example we used 5.52 µl of library, plus 6.48µl H~2~0 for a final library volume of 12 µl at 50 fmol concentration)](./img/libraryprepsminDNA.png){width="300"}
 
