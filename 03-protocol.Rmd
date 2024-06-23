@@ -250,7 +250,7 @@ However, it is only possible to check the number of pores (and estimate potentia
 
 As a gauge, we ran a flowcell with 1,500 pores for 24 hours (loaded with 24 barcoded samples of 16S-ITS-23S amplicons). At the end 558 active pores remained before the wash.
 
-Note that washing the flowcell does not interfer with any active basecalling processes on the Mk1C, which may take days to finish if High accuracy was chosen.
+Note that washing the flowcell does not interfer with any active basecalling processes on the Mk1C, which may take days to finish if High Accuracy was chosen.
 
 ### Checklist
 
@@ -262,7 +262,7 @@ Note that washing the flowcell does not interfer with any active basecalling pro
 **Follow the Nanopore protocol. There are three steps:**
 
 1.  Preparation of 400 µl washing buffer
-2.  Load 200 µl of washing bufferm, wait 5 minutes, then add the remaining 200 µl and wait 1 hour.
+2.  Load 200 µl of washing buffer, wait 5 minutes, then add the remaining 200 µl and wait 1 hour.
 3.  If you plan to storage flowcell for later use - add storage buffer. Otherwise load new library.
 
 ## Basecalling
