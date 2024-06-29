@@ -58,5 +58,10 @@ We commonly extract DNA from soils or from wastewater sludges using the DNeasy P
 
 ## Computational resources and database
 
--   For basecalling the raw nanopore data (pod5 files) with dorado - a Linux instance or computer is required with ≥ 2 TB storage, 64 GB DDR4 RAM and at least one Nvidia A100 GPU (e.g. GeForce RTX 4090). Note that the MinION Mk1C or the GridION can also basecall the data (much easier). But in the case of the MinION only at High Accuracy (HAC) and not at Super High Accuracy (SUP). But even at HAC it takes days to finish. Note that SUP achieves \~Q20 while HAC only \~Q18.
+-   For basecalling the raw nanopore data (pod5 files) with dorado - a Linux instance or computer is required with ≥ 2 TB storage, 64 GB DDR4 RAM and at least one Nvidia A100 GPU (e.g. GeForce RTX 4090). Note that the MinION Mk1C or the GridION can also basecall the data (much easier). But in the case of the MinION only at High Accuracy (HAC) and not at Super High Accuracy (SUP). But even at HAC it takes days to finish. Note that SUP achieves \~Q20-Q25 while HAC only \~Q18.
+
 -   16S-ITS-23S Database. To be confirmed.
+
+!["Example of quality distribution of 4kb amplicon reads basecalled at super high accuracy with dorado."](./img/basecallsummary.png){width="400"}
+
+!["Example of quality distribution of 4kb amplicon reads basecalled at high accuracy with dorado."](./img/basecallsummaryHAC.png){width="400"}

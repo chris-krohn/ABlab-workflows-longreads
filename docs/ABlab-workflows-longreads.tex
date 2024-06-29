@@ -80,7 +80,7 @@
 
 \title{A protocol for sequencing and analysing 16S-ITS-23S amplicons using Oxford Nanopore's Native Barcoding kit to profile prokaryotes on species-level in a mixed community {[}Under development{]}}
 \author{\href{https://www.rmit.edu.au/contact/staff-contacts/academic-staff/k/krohn---christian}{Christian Krohn, PhD, RMIT University}}
-\date{2024-06-28}
+\date{2024-06-30}
 
 \begin{document}
 \maketitle
@@ -246,12 +246,23 @@ We commonly extract DNA from soils or from wastewater sludges using the DNeasy P
 \section{Computational resources and database}\label{computational-resources-and-database}
 
 \begin{itemize}
-\tightlist
 \item
-  For basecalling the raw nanopore data (pod5 files) with dorado - a Linux instance or computer is required with ≥ 2 TB storage, 64 GB DDR4 RAM and at least one Nvidia A100 GPU (e.g.~GeForce RTX 4090). Note that the MinION Mk1C or the GridION can also basecall the data (much easier). But in the case of the MinION only at High Accuracy (HAC) and not at Super High Accuracy (SUP). But even at HAC it takes days to finish. Note that SUP achieves \textasciitilde Q20 while HAC only \textasciitilde Q18.
+  For basecalling the raw nanopore data (pod5 files) with dorado - a Linux instance or computer is required with ≥ 2 TB storage, 64 GB DDR4 RAM and at least one Nvidia A100 GPU (e.g.~GeForce RTX 4090). Note that the MinION Mk1C or the GridION can also basecall the data (much easier). But in the case of the MinION only at High Accuracy (HAC) and not at Super High Accuracy (SUP). But even at HAC it takes days to finish. Note that SUP achieves \textasciitilde Q20-Q25 while HAC only \textasciitilde Q18.
 \item
   16S-ITS-23S Database. To be confirmed.
 \end{itemize}
+
+\begin{figure}
+\centering
+\includegraphics[width=4.16667in,height=\textheight]{./img/basecallsummary.png}
+\caption{``Example of quality distribution of 4kb amplicon reads basecalled at super high accuracy with dorado.''}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=4.16667in,height=\textheight]{./img/basecallsummaryHAC.png}
+\caption{``Example of quality distribution of 4kb amplicon reads basecalled at high accuracy with dorado.''}
+\end{figure}
 
 \chapter{Protocol}\label{protocol}
 
