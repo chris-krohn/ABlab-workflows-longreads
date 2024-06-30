@@ -111,7 +111,7 @@ Time required: \~ 1 hr per 24 samples.
 -   JetSeq Clean Magnetic beads (MER-BIO-68031, Millenium Science) or equivalent - to clean up PCR products
 -   Qubit 1X dsDNA BR or HR Assay Kit (Q33266 or Q33231, Thermo Fisher)
 -   HyperLadder 1kb (BIO-33025, Bioline, Millenium Science)
--   A worksheet to enter concentrations to calculate volumes to normalise DNA to 200 fmol
+-   A worksheet to enter concentrations and calculate volumes for normalising DNA to 200 fmol
 
 **Note**
 
@@ -197,7 +197,7 @@ Time required: \~ 6 hours from start to finished library ready for loading.
 
 2.  Native barcode ligation using 0.75 µL of end-prepped DNA using one of 96 barcodes from the kit for each sample, plus pooling of all barcoded samples into a LoBind tube (1.5 mL).
 
-3.  Bead clean-up of pooled end-prepped DNA library and elution of 35 µL volume; quantification with Qubit 1X dsDNA HS Assay Kit. We used the all of the available end-prepped volume (e.g. 33 µl after Qubit quantification) for the next step, i.o. only 30 µl as per protocol.
+3.  Bead clean-up of pooled end-prepped DNA library and elution of 35 µL volume; quantification with Qubit 1X dsDNA HS Assay Kit. We used all of the available end-prepped volume (e.g. 33 µl after Qubit quantification) for the next step, i.o. only 30 µl as per protocol.
 
     SAFE STOP: Store at 4 ˚C overnight if needed.
 
