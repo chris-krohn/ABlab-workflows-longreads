@@ -829,7 +829,7 @@ The below assumes that the \texttt{SQK-NBD114-96} kit was used for preparing the
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  First let Nanopore sequencer finish basecalling with the Fast model (Unless you have a Promethion Pi, which will provide you with SUP-basecalled bam/fastq files; the following steps are not required in this case).
+  First let the Nanopore sequencer finish basecalling with the Fast model (unless you have a Promethion Pi, which will provide you with SUP-basecalled bam/fastq files, i.e.~the following steps are not required in this case).
 \item
   Copy POD5 files from sequencer to a GPU-powered computer or instance, into a folder called \texttt{pod5/}. In our case that was 85GB of data (But expect a bit more; our MinION had a power outage just before all pod5 finished generating\ldots{} :( ).
 \item
@@ -866,7 +866,7 @@ As rrna operon sequencing is relatively new, the classification methods and data
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Trim fastq files. In this case we used the tool \texttt{Chopper}.
+  Trim fastq files. In this case we used the tool \texttt{Chopper} to remove any reads below Q20 and filter by length.
 \end{enumerate}
 
 \begin{Shaded}
@@ -889,17 +889,17 @@ As rrna operon sequencing is relatively new, the classification methods and data
 \setcounter{enumi}{1}
 \tightlist
 \item
-  Download and select the \texttt{wf-metagenome\ workflow}.\\
+  Within EPI2ME, download, install and select the \texttt{wf-metagenome\ workflow}.\\
   \includegraphics[width=5.20833in,height=\textheight]{./img/wf-metagenome.png}
 \item
   Click \texttt{Run\ this\ workflow}, then \texttt{Run\ on\ your\ computer}.
 \item
-  Select the path your your fastq files.
+  Select the path to your fastq files.
 \item
-  Select Classification method. Either kraken2 or minimap2
+  Select classification method. Either kraken2 or minimap2
 \item
   Under Reference Options select a database. We used \texttt{ncbi\_16s\_18s\_28s\_ITS}.\\
-  \includegraphics[width=5.20833in,height=\textheight]{./img/database_option.png}
+  \includegraphics[width=5.20833in,height=\textheight]{./img/database_option.png}~
 \item
   Under Sample Options select you sample\_sheet.csv. We used \texttt{ncbi\_16s\_18s\_28s\_ITS}.\\
   \includegraphics[width=5.20833in,height=\textheight]{./img/samplesheet.png}\\
@@ -907,7 +907,7 @@ As rrna operon sequencing is relatively new, the classification methods and data
 \item
   Then launch the workflow.
 \item
-  Once completed your will received \texttt{report.html} with some results, plus a \texttt{.tsv} table with abundances on species-level.
+  Once completed your will receive a \texttt{report.html} with some results, plus a \texttt{.tsv} table with abundances to species-level for further analysis in your favorite platform.
 \end{enumerate}
 
 \section{Results}\label{results}

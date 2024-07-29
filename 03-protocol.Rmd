@@ -285,7 +285,7 @@ The below assumes that the `SQK-NBD114-96` kit was used for preparing the amplic
 
 ### Steps
 
-1.  First let Nanopore sequencer finish basecalling with the Fast model (Unless you have a Promethion Pi, which will provide you with SUP-basecalled bam/fastq files; the following steps are not required in this case).
+1.  First let the Nanopore sequencer finish basecalling with the Fast model (unless you have a Promethion Pi, which will provide you with SUP-basecalled bam/fastq files, i.e. the following steps are not required in this case).
 2.  Copy POD5 files from sequencer to a GPU-powered computer or instance, into a folder called `pod5/`. In our case that was 85GB of data (But expect a bit more; our MinION had a power outage just before all pod5 finished generating... :( ).
 3.  Run `dorado basecaller sup pod5/ > calls.bam`.
 4.  Demultiplex the resulting `.bam` file using `dorado demux --kit-name SQK-NBD114-96 --sample-sheet samplesheet.csv --output-dir 16SITS23S_samples/ --emit-fastq call`.
@@ -308,7 +308,7 @@ As rrna operon sequencing is relatively new, the classification methods and data
 
 ### Steps
 
-1.  Trim fastq files. In this case we used the tool `Chopper`.
+1.  Trim fastq files. In this case we used the tool `Chopper` to remove any reads below Q20 and filter by length. 
 
 ```{r message=FALSE, warning=FALSE, eval=FALSE}
 #!/bin/bash
@@ -323,18 +323,18 @@ for file in *.fastq; do
 done
 ```
 
-2.  Download and select the `wf-metagenome workflow`.\
+2.  Within EPI2ME, download, install and select the `wf-metagenome workflow`.\
     ![Download and select the wf-metagenome workflow](./img/wf-metagenome.png){width="500"}
 3.  Click `Run this workflow`, then `Run on your computer`.
-4.  Select the path your your fastq files.
-5.  Select Classification method. Either kraken2 or minimap2
+4.  Select the path to your fastq files.
+5.  Select classification method. Either kraken2 or minimap2
 6.  Under Reference Options select a database. We used `ncbi_16s_18s_28s_ITS`.\
-    ![Database option](./img/database_option.png){width="500"}
+    ![Database option](./img/database_option.png){width="500"}\  
 7.  Under Sample Options select you sample_sheet.csv. We used `ncbi_16s_18s_28s_ITS`.\
     ![Sample sheet option](./img/samplesheet.png){width="500"}\
     ![Sample_sheet example](./img/sample_sheetxmpl.png){width="500"}
 8.  Then launch the workflow.
-9.  Once completed your will received `report.html` with some results, plus a `.tsv` table with abundances on species-level.
+9.  Once completed your will receive a `report.html` with some results, plus a `.tsv` table with abundances to species-level for further analysis in your favorite platform.  
 
 ## Results
 

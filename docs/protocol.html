@@ -624,7 +624,7 @@ Pipetting into the 96-well plate may take time as there are two rounds of pipett
 <div id="steps-5" class="section level3 hasAnchor" number="3.7.2">
 <h3><span class="header-section-number">3.7.2</span> Steps<a href="protocol.html#steps-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ol style="list-style-type: decimal">
-<li>First let Nanopore sequencer finish basecalling with the Fast model (Unless you have a Promethion Pi, which will provide you with SUP-basecalled bam/fastq files; the following steps are not required in this case).</li>
+<li>First let the Nanopore sequencer finish basecalling with the Fast model (unless you have a Promethion Pi, which will provide you with SUP-basecalled bam/fastq files, i.e. the following steps are not required in this case).</li>
 <li>Copy POD5 files from sequencer to a GPU-powered computer or instance, into a folder called <code>pod5/</code>. In our case that was 85GB of data (But expect a bit more; our MinION had a power outage just before all pod5 finished generating… :( ).</li>
 <li>Run <code>dorado basecaller sup pod5/ &gt; calls.bam</code>.</li>
 <li>Demultiplex the resulting <code>.bam</code> file using <code>dorado demux --kit-name SQK-NBD114-96 --sample-sheet samplesheet.csv --output-dir 16SITS23S_samples/ --emit-fastq call</code>.</li>
@@ -648,7 +648,7 @@ Pipetting into the 96-well plate may take time as there are two rounds of pipett
 <div id="steps-6" class="section level3 hasAnchor" number="3.8.2">
 <h3><span class="header-section-number">3.8.2</span> Steps<a href="protocol.html#steps-6" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ol style="list-style-type: decimal">
-<li>Trim fastq files. In this case we used the tool <code>Chopper</code>.</li>
+<li>Trim fastq files. In this case we used the tool <code>Chopper</code> to remove any reads below Q20 and filter by length.</li>
 </ol>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="protocol.html#cb1-1" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
 <span id="cb1-2"><a href="protocol.html#cb1-2" tabindex="-1"></a><span class="cf">for</span> file <span class="cf">in</span> <span class="sc">*</span>.fastq; do</span>
@@ -661,18 +661,18 @@ Pipetting into the 96-well plate may take time as there are two rounds of pipett
 <span id="cb1-9"><a href="protocol.html#cb1-9" tabindex="-1"></a>        echo <span class="st">&quot;Filtered reads from $file saved to $output_file&quot;</span></span>
 <span id="cb1-10"><a href="protocol.html#cb1-10" tabindex="-1"></a>done</span></code></pre></div>
 <ol start="2" style="list-style-type: decimal">
-<li>Download and select the <code>wf-metagenome workflow</code>.<br />
+<li>Within EPI2ME, download, install and select the <code>wf-metagenome workflow</code>.<br />
 <img src="img/wf-metagenome.png" width="500" alt="Download and select the wf-metagenome workflow" /></li>
 <li>Click <code>Run this workflow</code>, then <code>Run on your computer</code>.</li>
-<li>Select the path your your fastq files.</li>
-<li>Select Classification method. Either kraken2 or minimap2</li>
+<li>Select the path to your fastq files.</li>
+<li>Select classification method. Either kraken2 or minimap2</li>
 <li>Under Reference Options select a database. We used <code>ncbi_16s_18s_28s_ITS</code>.<br />
-<img src="img/database_option.png" width="500" alt="Database option" /></li>
+<img src="img/database_option.png" width="500" alt="Database option" /> </li>
 <li>Under Sample Options select you sample_sheet.csv. We used <code>ncbi_16s_18s_28s_ITS</code>.<br />
 <img src="img/samplesheet.png" width="500" alt="Sample sheet option" /><br />
 <img src="img/sample_sheetxmpl.png" width="500" alt="Sample_sheet example" /></li>
 <li>Then launch the workflow.</li>
-<li>Once completed your will received <code>report.html</code> with some results, plus a <code>.tsv</code> table with abundances on species-level.</li>
+<li>Once completed your will receive a <code>report.html</code> with some results, plus a <code>.tsv</code> table with abundances to species-level for further analysis in your favorite platform.</li>
 </ol>
 </div>
 </div>
