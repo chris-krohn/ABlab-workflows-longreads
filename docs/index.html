@@ -23,7 +23,7 @@
 <meta name="author" content="Christian Krohn, PhD, RMIT University" />
 
 
-<meta name="date" content="2024-07-29" />
+<meta name="date" content="2024-07-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -241,7 +241,7 @@ div.csl-indent {
 <div id="header">
 <h1 class="title">A protocol for sequencing and analysing 16S-ITS-23S amplicons using Oxford Nanopore’s Native Barcoding kit to profile prokaryotes on species-level in a mixed community [Under development]</h1>
 <p class="author"><em><a href="https://www.rmit.edu.au/contact/staff-contacts/academic-staff/k/krohn---christian">Christian Krohn, PhD, RMIT University</a></em></p>
-<p class="date"><em>2024-07-29</em></p>
+<p class="date"><em>2024-07-30</em></p>
 </div>
 <div id="about" class="section level1 hasAnchor" number="1">
 <h1><span class="header-section-number">Chapter 1</span> About this GitBook<a href="index.html#about" class="anchor-section" aria-label="Anchor link to header"></a></h1>
@@ -249,6 +249,8 @@ div.csl-indent {
 <p>This GitBook is under development (2024).</p>
 <p>This GitBook provides a step-by-step protocol for anyone who want to get started with sequencing multiple samples of high quality, full-length microbial amplicons (16S-ITS-23S) with an Oxford Nanopore instrument, and then process and visualise the data using various packages in R. The aim is to profile a community of bacteria and archaea on <strong>species-level</strong>.</p>
 <p>Read and use this protocol either directly or to develop your own.</p>
+<p>Note that using the 16S-ITS-23S primer pair we use in this workflow does not result in a true representation of microbial abundances. Coverage seems scattered with some key bacteria and archaea underrepresented. Also note that the read classification used (<code>wf-metagenome</code> workflow from EPI2ME, with kmer-based read predictions) will provide classified reads of Bacteria and Archaea but, depending on the read quality, will result in some false positives. And again, abundances will not be a true representation as no clustering, dereplication or ASV generation is involved. Results will not be comparable to other studies.</p>
+<p>However, this method will provide read classification to species-level, which may be useful in cases when you are not interested in the true representation of relative abundances. For example, if you are after temporal variation, or differences between your samples in your experiment.</p>
 <p>This protocol reflects the experiences we had in the lab and may help to get you started on your own journey of discovery. One of the biggest hurdles is the effort required to learn new technologies, hence this protocol aims at lowering your ‘activation’ energy by providing some guidance for each step from DNA extraction, to amplification, library preparation, sequencing, data processing and finally some basic visualisations in R.</p>
 <p>This protocol uses the DNeasy Powersoil Pro Kit (Qiagen, Hilden, Germany) to extract DNA from wastewater sludge, as well as the Native Barcoding Kit (SQK-NBD114.96) with a R10.4.1 flowcell (FLO-MIN114) to sequence long (~4-4.4 kb) amplicons from environmental DNA. The primer used was developed by <span class="citation">(<a href="#ref-Martijn2019">Martijn et al. 2019</a>)</span>. Initial costs to purchase all consumables will be ~AUD$7,700.</p>
 <p>Check out our workflows for short-read 16S sequencing at <a href="https://chrismitbiz.github.io/ABlab-workflows" class="uri">https://chrismitbiz.github.io/ABlab-workflows</a> if you want to get started with Miseq 16S sequencing instead.</p>
