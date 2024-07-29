@@ -28,3 +28,9 @@ flow-cell-wash
 checklist-5
 steps-4
 basecalling
+checklist-6
+steps-5
+read-classification
+checklist-7
+steps-6
+results

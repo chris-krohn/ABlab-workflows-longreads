@@ -36,6 +36,46 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
@@ -80,7 +120,7 @@
 
 \title{A protocol for sequencing and analysing 16S-ITS-23S amplicons using Oxford Nanopore's Native Barcoding kit to profile prokaryotes on species-level in a mixed community {[}Under development{]}}
 \author{\href{https://www.rmit.edu.au/contact/staff-contacts/academic-staff/k/krohn---christian}{Christian Krohn, PhD, RMIT University}}
-\date{2024-07-02}
+\date{2024-07-29}
 
 \begin{document}
 \maketitle
@@ -552,7 +592,7 @@ Time required: \textasciitilde{} 6 hours from start to finished library ready fo
 \item
   Update the MinION packages and MinKNOW software.
 \item
-  Prepare a sample sheet for upload to instrument if desired (not essential but saves a little time when setting up the sequencing in MinKNOW). More info on how to upload sample sheets \href{https://community.nanoporetech.com/docs/prepare/library_prep_protocols/experiment-companion-minknow/v/mke_1013_v1_revdc_11apr2016/sample-sheet-upload}{here}.
+  Prepare a sample sheet for upload to instrument if desired (not essential but saves a little time when setting up the sequencing in MinKNOW - AND you can use it for demultiplexing with dorado later). More info on how to upload sample sheets \href{https://community.nanoporetech.com/docs/prepare/library_prep_protocols/experiment-companion-minknow/v/mke_1013_v1_revdc_11apr2016/sample-sheet-upload}{here}.
 \item
   Amplicon product yields from PCR can vary widely depending on environmental source.
 \item
@@ -765,9 +805,118 @@ Note that washing the flowcell does not interfer with any active basecalling pro
 
 \section{Basecalling}\label{basecalling}
 
-Time required: \textasciitilde{} several days depending on computational resources.
+Time required: \textasciitilde{} several days depending on computational resources.\\
 
-\textbf{Details to follow}
+If you have a PromethION integrated (P2i) you can run Super High Accuracy (SUP) basecalling on the device in almost real time (it has an Nvidia GPU). In that case there is no need to copy POD5 files from the instrument to another computer for SUP basecalling on a separate GPU device.
+
+The below assumes that the \texttt{SQK-NBD114-96} kit was used for preparing the amplicon library.
+
+\subsection{Checklist}\label{checklist-6}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://github.com/nanoporetech/dorado}{dorado} installed on an instance or device with either Apple silicon (M1/M2) or Nvidia GPUs (the latest Nvidia RTX 4090 performs best it seems).
+\item
+  POD5 files from Nanopore sequencer (either copy on USB or connect do instrument folders through \texttt{ssh})
+\item
+  samplesheet.csv (More details about the sample sheet in the library prep section).
+\end{itemize}
+
+\subsection{Steps}\label{steps-5}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  First let Nanopore sequencer finish basecalling with the Fast model (Unless you have a Promethion Pi, which will provide you with SUP-basecalled bam/fastq files; the following steps are not required in this case).
+\item
+  Copy POD5 files from sequencer to a GPU-powered computer or instance, into a folder called \texttt{pod5/}. In our case that was 85GB of data (But expect a bit more; our MinION had a power outage just before all pod5 finished generating\ldots{} :( ).
+\item
+  Run \texttt{dorado\ basecaller\ sup\ pod5/\ \textgreater{}\ calls.bam}.
+\item
+  Demultiplex the resulting \texttt{.bam} file using \texttt{dorado\ demux\ -\/-kit-name\ SQK-NBD114-96\ -\/-sample-sheet\ samplesheet.csv\ -\/-output-dir\ 16SITS23S\_samples/\ -\/-emit-fastq\ call}.
+\end{enumerate}
+
+At the end you should have one \texttt{.fastq} file for each sample, ready for further quality trimming and read classification.
+
+\section{Read classification}\label{read-classification}
+
+The following method (using the \texttt{wf-metagenome} workflow from EPI2ME, with kmer-based read predictions) will provide classified reads of Bacteria and Archaea but, depending on the read quality, will result in some false positives. And abundances will not be a true representation of abundances as no clustering, dereplication or ASV generation is involved. Results will not be comparable to other studies.
+
+However, it will provide read classification to species-level to some degree of certainty, which may be useful in cases when you are not interested in the true representation of relative abundances. For example, if you are after temporal variation or differences between your samples in your experiment.
+
+As rrna operon sequencing is relatively new, the classification methods and databases are still evolving. If you want to explore other methods, I recommend starting with the following papers: \citep{Curry2022}, \citep{Rodriguez-Perez2021} and \citep{mbs:/content/journal/mgen/10.1099/mgen.0.001255}.
+
+\subsection{Checklist}\label{checklist-7}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://labs.epi2me.io/}{EPI2ME} installed (we use the desktop version). It requires Docker and Java so if this is your first time installing/using EPI2ME it may take you some time to get started.
+\item
+  Fastq files in a folder
+\item
+  \href{https://github.com/wdecoster/chopper}{Chopper} installed.
+\end{itemize}
+
+\subsection{Steps}\label{steps-6}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Trim fastq files. In this case we used the tool \texttt{Chopper}.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#!/bin/bash}
+\ControlFlowTok{for}\NormalTok{ file }\ControlFlowTok{in} \SpecialCharTok{*}\NormalTok{.fastq; do}
+        \CommentTok{\# Construct the output filename based on input filename}
+\NormalTok{        output\_file}\OtherTok{=}\StringTok{"$\{file\%.fastq\}\_filtered.fastq"}
+        
+        \CommentTok{\# Run the chopper command on the current file}
+\NormalTok{        chopper }\SpecialCharTok{{-}}\NormalTok{q }\DecValTok{20}  \SpecialCharTok{{-}{-}}\NormalTok{minlength }\DecValTok{3000} \SpecialCharTok{{-}{-}}\NormalTok{maxlength }\DecValTok{5000} \SpecialCharTok{{-}}\NormalTok{i }\StringTok{"$file"} \SpecialCharTok{\textgreater{}} \StringTok{"./Test/$output\_file"}
+        
+\NormalTok{        echo }\StringTok{"Filtered reads from $file saved to $output\_file"}
+\NormalTok{done}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Download and select the \texttt{wf-metagenome\ workflow}.\\
+  \includegraphics[width=5.20833in,height=\textheight]{./img/wf-metagenome.png}
+\item
+  Click \texttt{Run\ this\ workflow}, then \texttt{Run\ on\ your\ computer}.
+\item
+  Select the path your your fastq files.
+\item
+  Select Classification method. Either kraken2 or minimap2
+\item
+  Under Reference Options select a database. We used \texttt{ncbi\_16s\_18s\_28s\_ITS}.\\
+  \includegraphics[width=5.20833in,height=\textheight]{./img/database_option.png}
+\item
+  Under Sample Options select you sample\_sheet.csv. We used \texttt{ncbi\_16s\_18s\_28s\_ITS}.\\
+  \includegraphics[width=5.20833in,height=\textheight]{./img/samplesheet.png}\\
+  \includegraphics[width=5.20833in,height=\textheight]{./img/sample_sheetxmpl.png}
+\item
+  Then launch the workflow.
+\item
+  Once completed your will received \texttt{report.html} with some results, plus a \texttt{.tsv} table with abundances on species-level.
+\end{enumerate}
+
+\section{Results}\label{results}
+
+In our case we got \textasciitilde{} 25,000 reads per sample containing 2,137 species. Upon first inspection it is clear that read-depths is too low and that longer sequencing time is required per flowcell than 24 hours for 24 samples. We aim for around 100,000 reads per sample. On a MinION flowcell I would aim to sequence for the full 72 hours next time.
+
+\includegraphics[width=5.20833in,height=\textheight]{./img/results.png}\\
+\includegraphics[width=5.20833in,height=\textheight]{./img/results2.png}\\
+\includegraphics[width=5.20833in,height=\textheight]{./img/results3.png}
 
   \bibliography{book.bib,packages.bib}
 
