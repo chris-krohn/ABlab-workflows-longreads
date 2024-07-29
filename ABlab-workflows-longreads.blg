@@ -1,0 +1,49 @@
+This is BibTeX, Version 0.99d (TeX Live 2023)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: ABlab-workflows-longreads.aux
+The style file: apalike.bst
+Database file #1: book.bib
+Database file #2: packages.bib
+Warning--empty journal in Srinivas2024
+You've used 10 entries,
+            1935 wiz_defined-function locations,
+            552 strings with 7100 characters,
+and the built_in function-call counts, 5262 in all, are:
+= -- 464
+> -- 385
+< -- 0
++ -- 142
+- -- 142
+* -- 532
+:= -- 960
+add.period$ -- 29
+call.type$ -- 10
+change.case$ -- 121
+chr.to.int$ -- 10
+cite$ -- 11
+duplicate$ -- 137
+empty$ -- 271
+format.name$ -- 152
+if$ -- 960
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 10
+newline$ -- 52
+num.names$ -- 30
+pop$ -- 105
+preamble$ -- 1
+purify$ -- 121
+quote$ -- 0
+skip$ -- 103
+stack$ -- 0
+substring$ -- 283
+swap$ -- 9
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 60
+warning$ -- 1
+while$ -- 31
+width$ -- 0
+write$ -- 129
+(There was 1 warning)

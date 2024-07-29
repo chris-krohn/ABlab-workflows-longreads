@@ -330,7 +330,7 @@ done
 5.  Select classification method. Either kraken2 or minimap2
 6.  Under Reference Options select a database. We used `ncbi_16s_18s_28s_ITS`.\
     ![Database option](./img/database_option.png){width="500"}\  
-7.  Under Sample Options select you sample_sheet.csv. We used `ncbi_16s_18s_28s_ITS`.\
+7.  Under Sample Options select you sample_sheet.csv.\
     ![Sample sheet option](./img/samplesheet.png){width="500"}\
     ![Sample_sheet example](./img/sample_sheetxmpl.png){width="500"}
 8.  Then launch the workflow.
@@ -338,7 +338,7 @@ done
 
 ## Results
 
-In our case we got \~ 25,000 reads per sample containing 2,137 species. Upon first inspection it is clear that read-depths is too low and that longer sequencing time is required per flowcell than 24 hours for 24 samples. We aim for around 100,000 reads per sample. On a MinION flowcell I would aim to sequence for the full 72 hours next time.
+In our case we got \~ 25,000 reads per sample containing 2,137 species. Upon first inspection it is clear that read depth is too low and that longer sequencing times are required than 24 hours for 24 samples. We aim for around 100,000 reads per sample. On a MinION flowcell I would aim to sequence for the full 72 hours next time.
 
 ![Results](./img/results.png){width="500"}\
 ![Results](./img/results2.png){width="500"}\

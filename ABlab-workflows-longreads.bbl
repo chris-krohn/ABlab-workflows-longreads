@@ -1,0 +1,75 @@
+\begin{thebibliography}{}
+
+\bibitem[Brewer et~al., 2020]{Brewer2020}
+Brewer, T.~E., Albertsen, M., Edwards, A., Kirkegaard, R.~H., Rocha, E.~P., and
+  Fierer, N. (2020).
+\newblock {Unlinked rRNA genes are widespread among bacteria and archaea}.
+\newblock {\em ISME Journal}, 14(2):597--608.
+
+\bibitem[Curry et~al., 2022]{Curry2022}
+Curry, K.~D., Wang, Q., Nute, M.~G., Tyshaieva, A., Reeves, E., Soriano, S.,
+  Wu, Q., Graeber, E., Finzer, P., Mendling, W., Savidge, T., Villapol, S.,
+  Dilthey, A., and Treangen, T.~J. (2022).
+\newblock {Emu: species-level microbial community profiling of full-length 16S
+  rRNA Oxford Nanopore sequencing data}.
+\newblock {\em Nature Methods}, 19(7):845--853.
+
+\bibitem[Cusc{\'{o}} et~al., 2019]{Cusco2018}
+Cusc{\'{o}}, A., Catozzi, C., Vi{\~{n}}es, J., Sanchez, A., and Francino, O.
+  (2019).
+\newblock {Microbiota profiling with long amplicons using Nanopore sequencing:
+  Full-length 16S rRNA gene and the 16S-ITS-23S of the rrn operon}.
+\newblock {\em F1000Research}, 7.
+
+\bibitem[Gand et~al., 2023]{Gand2023}
+Gand, M., Bloemen, B., Vanneste, K., Roosens, N.~H., and {De Keersmaecker},
+  S.~C. (2023).
+\newblock {Comparison of 6 DNA extraction methods for isolation of high yield
+  of high molecular weight DNA suitable for shotgun metagenomics Nanopore
+  sequencing to detect bacteria}.
+\newblock {\em BMC Genomics}, 24(1):438.
+
+\bibitem[Jensen et~al., 2024]{Jensen2024}
+Jensen, T. B.~N., Dall, S.~M., Knutsson, S., Karst, S.~M., and Albertsen, M.
+  (2024).
+\newblock {High-throughput DNA extraction and cost-effective miniaturized
+  metagenome and amplicon library preparation of soil samples for DNA
+  sequencing}.
+\newblock {\em PLoS ONE}, 19(4 April):e0301446.
+
+\bibitem[Krohn et~al., 2024]{Krohn2024}
+Krohn, C., Jansriphibul, K., Dias, D.~A., Rees, C.~A., van~den Akker, B., Boer,
+  J.~C., Plebanski, M., Surapaneni, A., O'Carroll, D., Stuetz, R., Batstone,
+  D.~J., and Ball, A.~S. (2024).
+\newblock {Dead in the water – Role of relic DNA and primer choice for
+  targeted sequencing surveys of anaerobic sewage sludge intended for
+  biological monitoring}.
+\newblock {\em Water Research}, 253:121354.
+
+\bibitem[Martijn et~al., 2019]{Martijn2019}
+Martijn, J., Lind, A.~E., Sch{\"{o}}n, M.~E., Spiertz, I., Juzokaite, L.,
+  Bunikis, I., Pettersson, O.~V., and Ettema, T.~J. (2019).
+\newblock {Confident phylogenetic identification of uncultured prokaryotes
+  through long read amplicon sequencing of the 16S-ITS-23S rRNA operon}.
+\newblock {\em Environmental Microbiology}, 21(7):2485--2498.
+
+\bibitem[Rodr{\'{i}}guez-P{\'{e}}rez et~al., 2021]{Rodriguez-Perez2021}
+Rodr{\'{i}}guez-P{\'{e}}rez, H., Ciuffreda, L., and Flores, C. (2021).
+\newblock {NanoCLUST: a species-level analysis of 16S rRNA nanopore sequencing
+  data}.
+\newblock {\em Bioinformatics}, 37(11):1600--1601.
+
+\bibitem[Srinivas et~al., 2024]{Srinivas2024}
+Srinivas, M., Walsh, C.~J., Crispie, F., O'Sullivan, O., Cotter, P.~D.,
+  Sinderen, D., and Kenny, J.~G. (2024).
+\newblock {Evaluating the Efficiency of 16S-ITS-23S operon Sequencing: A
+  Comparison of Primer Pairs, Sequencing Platforms, and Taxonomic Classifiers}.
+
+\bibitem[Walsh et~al., 2024]{mbs:/content/journal/mgen/10.1099/mgen.0.001255}
+Walsh, C.~J., Srinivas, M., Stinear, T.~P., van Sinderen, D., Cotter, P.~D.,
+  and Kenny, J.~G. (2024).
+\newblock {GROND: a quality-checked and publicly available database of
+  full-length 16S-ITS-23S rRNA operon sequences}.
+\newblock {\em Microbial genomics}, 10(6).
+
+\end{thebibliography}
