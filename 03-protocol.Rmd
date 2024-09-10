@@ -342,4 +342,7 @@ In our case we got \~ 25,000 reads per sample containing 2,137 species. Upon fir
 
 ![Results](./img/results.png){width="500"}\
 ![Results](./img/results2.png){width="500"}\
+![Results](./img/lineageplot.png){width="500"}
+
+
 ![Results](./img/results3.png){width="500"}
