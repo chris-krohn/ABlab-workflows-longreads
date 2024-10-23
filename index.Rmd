@@ -42,7 +42,7 @@ We work at the Andy Ball lab, RMIT University, Bundoora, Melbourne and are part 
 
 More about me and my PhD research can be found here: <https://clean-dirt-digests.netlify.app>.\
 Follow me on [X](https://twitter.com/CleanDirtChris) (hardly use that anymore though) or [LinkedIn](https://www.linkedin.com/in/christian-krohn-54904855).
-
+ 
  
 
 ![](./img/avatar.jpg){width="150"}
