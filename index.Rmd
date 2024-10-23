@@ -32,7 +32,7 @@ This protocol reflects the experiences we had in the lab and may help to get you
 
 This protocol uses the DNeasy Powersoil Pro Kit (Qiagen, Hilden, Germany) to extract DNA from wastewater sludge, as well as the Native Barcoding Kit (SQK-NBD114.96) with a R10.4.1 flowcell (FLO-MIN114) to sequence long (\~4-4.4 kb) amplicons from environmental DNA. The primer used was developed by [@Martijn2019]. Initial costs to purchase all consumables will be \~AUD\$7,700.
 
-Check out our workflows for short-read 16S sequencing at <https://chrismitbiz.github.io/ABlab-workflows> if you want to get started with Miseq 16S sequencing instead.
+Check out our workflows for short-read 16S sequencing at <https://chris-krohn.github.io/ABlab-workflows> if you want to get started with Miseq 16S sequencing instead.
 
 If you are interested in sequencing the living biomass via PMA treatment in combination with short-read 16S sequencing, check out our recent paper [Dead in the water – Role of relic DNA and primer choice for targeted sequencing surveys of anaerobic sewage sludge intended for biological monitoring](https://doi.org/10.1016/j.watres.2024.121354) [@Krohn2024]
 
